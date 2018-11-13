@@ -33,8 +33,6 @@ laparams = LAParams()
 def pdf2txt(pdf_directory, txt_directory, password=None):
     rsrcmgr = PDFResourceManager(caching=caching)
     outfp = open(txt_directory, 'wb')
-    # device = TextConverter(rsrcmgr, outfp, codec=codec, laparams=laparams,
-    #                        imagewriter=imagewriter)
     device = TextConverter(rsrcmgr, outfp, codec=codec, laparams=laparams,
                            imagewriter=imagewriter)
     # Open a PDF file.
@@ -53,12 +51,9 @@ def pdf2txt(pdf_directory, txt_directory, password=None):
 def pdf2html(pdf_directory, html_directory, password=None):
     rsrcmgr = PDFResourceManager(caching=caching)
     outfp = open(html_directory, 'wb')
-    # device = TextConverter(rsrcmgr, outfp, codec=codec, laparams=laparams,
-    #                        imagewriter=imagewriter)
     device = HTMLConverter(rsrcmgr, outfp, codec=codec, scale=scale,
                            layoutmode=layoutmode, laparams=laparams,
                            imagewriter=imagewriter, debug=debug)
-    # Open a PDF file.
     fp = open(pdf_directory, 'rb')
     interpreter = PDFPageInterpreter(rsrcmgr, device)
     for page in PDFPage.get_pages(fp, pagenos,
@@ -72,7 +67,6 @@ def pdf2html(pdf_directory, html_directory, password=None):
 
 
 def main():
-    # pdf_parse(pdf_directory)
     pdf2html(pdf_directory, html_directory)
     pdf2txt(pdf_directory, txt_directory)
 
