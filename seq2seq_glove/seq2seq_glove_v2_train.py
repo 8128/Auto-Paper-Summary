@@ -4,14 +4,14 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from keras_text_summarization.library.utility.plot_utils import plot_and_save_history
 from keras_text_summarization.library.seq2seq import Seq2SeqGloVeSummarizerV2
-from keras_text_summarization.library.applications.fake_news_loader import fit_text
+from keras_text_summarization.library.applications.paper_loader import fit_text
 import numpy as np
 
 LOAD_EXISTING_WEIGHTS = False
 
 
 def main():
-    np.random.seed(42)
+    np.random.seed(100)
     data_dir_path = './data'
     very_large_data_dir_path = './very_large_data'
     report_dir_path = './reports'
@@ -30,8 +30,8 @@ def main():
     summarizer = Seq2SeqGloVeSummarizerV2(config)
     summarizer.load_glove(very_large_data_dir_path)
 
-    if LOAD_EXISTING_WEIGHTS:
-        summarizer.load_weights(weight_file_path=Seq2SeqGloVeSummarizerV2.get_weight_file_path(model_dir_path=model_dir_path))
+    # if LOAD_EXISTING_WEIGHTS:
+    #     summarizer.load_weights(weight_file_path=Seq2SeqGloVeSummarizerV2.get_weight_file_path(model_dir_path=model_dir_path))
 
     Xtrain, Xtest, Ytrain, Ytest = train_test_split(X, Y, test_size=0.2, random_state=42)
 
@@ -39,7 +39,7 @@ def main():
     print('testing size: ', len(Xtest))
 
     print('start fitting ...')
-    history = summarizer.fit(Xtrain, Ytrain, Xtest, Ytest, epochs=20, batch_size=16)
+    history = summarizer.fit(Xtrain, Ytrain, Xtest, Ytest, epochs=40, batch_size=32)
 
     history_plot_file_path = report_dir_path + '/' + Seq2SeqGloVeSummarizerV2.model_name + '-history.png'
     if LOAD_EXISTING_WEIGHTS:
