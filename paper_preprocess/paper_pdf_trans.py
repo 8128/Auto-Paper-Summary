@@ -1,6 +1,7 @@
 # created by Tianyi Tang @ 2018.11.3
 # email : tty8128@bu.edu
 
+import sys
 from pdfminer.pdfparser import PDFParser
 from pdfminer.pdfdocument import PDFDocument
 from pdfminer.pdfpage import PDFPage
@@ -67,6 +68,12 @@ def pdf2html(pdf_directory, html_directory, password=None):
 
 
 def main():
+    if sys.argv[1]:
+      pdf_directory = sys.argv[1]
+    if sys.argv[2]:
+      html_directory = sys.argv[2]
+    if len(sys.argv) >= 4:
+      sys.exit(1)
     pdf2html(pdf_directory, html_directory)
     pdf2txt(pdf_directory, txt_directory)
 
