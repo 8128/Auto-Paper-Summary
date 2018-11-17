@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="NIPS Website">
+      <meta name="author" content="NIPS Foundation">
+      <!--   <link rel="shortcut icon" href="../../assets/ico/favicon.ico"> -->
+    
+
+    <title>NIPS 2015 List of Accepted Papers</title>
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="/static/admin/css/nips.css" type="text/css">
+    <link rel="stylesheet" href="/static/admin/bootstrap/dist/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/admin/css/offcanvas.css" type="text/css">
+    <link rel="stylesheet" href="/static/admin/css/custom.css" type="text/css">
+    <link rel="stylesheet" href="/static/admin/alohaeditor/src/css/aloha.css" type="text/css" media="screen">
+    
+    <link rel="stylesheet" href="/static/admin/glyphicons_pro/glyphicons/web/html_css/css/glyphicons.css" type="text/css">
+ 
+    <link rel="stylesheet" href="/static/admin/bootstrap-wizard/src/bootstrap-wizard.css" type="text/css">
+	
+	
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+      },
+        "HTML-CSS": {
+            scale: 97 /*with this, mathjax sizing algorithm currently renders text at 100%*/
+        },
+    });
+</script>
+<script type="text/javascript" async src="/static/admin/js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML.js&delayStartupUntil=onload"></script>
+	
+	
+	
+
+   
+    <style>
+	a[href]:after { content: none !important; }
+	button:after { content:none !important;}
+	</style>
+<!--This script keeps local links inside the web app rather than opening them
+in Safari, and has nothing to do with editing or Aloha.-->
+
+<script type="text/javascript">
+	(function(document,navigator,standalone) {
+		// prevents links from apps from oppening in mobile safari
+		// this javascript must be the first script in your <head>
+		if ((standalone in navigator) && navigator[standalone]) {
+			var curnode, location=document.location, stop=/^(a|html)$/i;
+			document.addEventListener('click', function(e) {
+				curnode=e.target;
+				while (!(stop).test(curnode.nodeName)) {
+					curnode=curnode.parentNode;
+				}
+				// Condidions to do this only on links to your own app
+				// if you want all links, use if('href' in curnode) instead.
+				if(
+					'href' in curnode && // is a link
+					(chref=curnode.href).replace(location.href,'').indexOf('#') && // is not an anchor
+					(	!(/^[a-z\+\.\-]+:/i).test(chref) ||                       // either does not have a proper scheme (relative links)
+						chref.indexOf(location.protocol+'//'+location.host)===0 ) // or is in the same protocol and domain
+				) {
+					e.preventDefault();
+					location.href = curnode.href;
+				}
+			},false);
+		}
+	})(document,window.navigator,'standalone');
+</script>        
+
+<!-- This style sets the minimum size of a blurb to 260 px unless there is a
+template context variable blurb_min_height that sets it otherwise. If blurbs
+aren't all about the same size, they don't flow well when the window is
+resized.-->
+
+
+<style>
+/*This is here rather that in a .css file for a reason.*/
+    @media screen and (min-width: 767px) {
+        .blurb {
+            min-height:260px;
+        }
+    }
+</style>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>if (typeof jQuery === 'undefined') {
+  document.write(unescape('%3Cscript%20src%3D%22//static/admin/js/jquery-2.1.4.min.js%22%3E%3C/script%3E'));
+}
+</script>
+
+
+
+
+<script>
+    var jq2 = jQuery;
+    /*Store a pointer to jquery2 so I can reference it later.  Aloha loads jquery 1.7 and much of bootstrap 3 is not compatible*/
+    
+</script>
+	
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script> 
+	if(typeof($.fn.modal) === 'undefined') 
+		{document.write('<script src="//static/admin/bootstrap/dist/js/bootstrap.min.js"><\/script>')}
+</script>
+
+
+
+
+<script src="/static/admin/js/ajax-csrf-snippet.js" type="text/javascript"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css">
+
+
+
+
+
+  </head>
+
+  <body style="min-height:900px">
+      
+      <div class="noprint">
+      <div class="navbar navbar-fixed-top navbar-inverse showborder" role="navigation" style="height:50px !important">
+        <div class="container showborder">
+            <p class="pull-left visible-xs">
+              <button type="button" class="navbar-toggle" data-toggle="offcanvas" onclick="window.scrollTo(0, 0);" id="hamburger">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                
+              </button>
+            </p>
+          <div class="navbar-header" style="white-space:nowrap;">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="position:relative;top:-5px" id="toggleSearch">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="glyphicon glyphicon-search" style="color:white;"></span>
+                </button>
+				<a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span></a> 
+				
+                
+                
+                
+                  
+                      
+                      <a href="/accounts/login?nextp=/Conferences/2015/AcceptedPapers " class="navbar-brand"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                  
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				  
+
+          </div>
+          <div class="collapse navbar-inverse navbar-collapse" style="padding-left:50px">
+
+                <form class="navbar-form " role="search" action="/search">
+                        <div class="input-group" style="max-width:400px">
+                            <input type="text" class="form-control" spellcheck="false" placeholder="Search nips.cc" name="q" id="nips-search" style="width:100%">
+                            <div class="input-group-btn">
+                                <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+                   </form>
+				  
+          </div><!-- /.nav-collapse -->
+        </div><!-- /.container -->
+      </div><!-- /.navbar -->
+      </div><!--noprint div-->
+      <!--For unit tests-->
+      <div id="menuLoad"></div>
+      
+
+
+    <div class="container pull-left" style="min-height:00px"> <!--The main container for the page content-->
+
+      <div id="wholepage" class="row row-offcanvas row-offcanvas-left" style="z-index:5"> <!--This holds the whole page including the navbar-->
+          
+          <!-- Sidebar on the left-->
+
+              <div class="col-xs-6 col-sm-3 sidebar-offcanvas noprint" id="sidebar" role="navigation" style="z-index:5">
+                <div class="list-group">
+                    
+                    
+                    
+                    <div class="dropdown list-group-item active" style="background-color: #357ebd; border-color: #357ebd;" id="dropdownMenu1">
+                      <div class="dropdown-toggle btn-link" data-toggle="dropdown" style="color:white">
+                          <span class="hidden-xs">Year </span><span id="conferenceYear" >(2015)</span> <span class="caret"></span>
+                      </div>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" id="previousConferencesMenu">
+                        <li class="" role="menuitem" tabindex="-1"> <a href="/Conferences/2015">2015</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li class="" role="menuitem" tabindex="-1"> <a href="/Conferences/2014">2014</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li class="" role="menuitem" tabindex="-1"> <a  href="/Conferences/2013">2013</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li class="" role="menuitem" tabindex="-1"> <a  href="/Conferences/2012">2012</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li class="" role="menuitem" tabindex="-1"> <a  href="/Conferences/2011">2011</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li class="" role="menuitem" tabindex="-1"> <a  href="/Conferences/2010">2010</a></li>
+						<li role="presentation" class="divider"></li>
+                        <li class="" role="menuitem" tabindex="-1"> <a  href="/Conferences/2009">2009</a></li>
+						<li role="presentation" class="divider"></li>
+                        <li class="" role="menuitem" tabindex="-1"> <a  href="/Conferences/2008">2008</a></li>
+						<li role="presentation" class="divider"></li>
+                        <li class="" role="menuitem" tabindex="-1"> <a  href="/Conferences/2007">2007</a></li>
+						<li role="presentation" class="divider"></li>
+                        <li class="" role="menuitem" tabindex="-1"> <a  href="/Conferences/2006">2006</a></li>
+						<li role="presentation" class="divider"></li>
+                        <li class="" role="menuitem" tabindex="-1"> <a  href="/Conferences/PastConferences">Earlier Conferences</a></li>
+                      </ul>
+                    </div>
+				
+                
+                
+                
+                
+				
+                <div class="dropdown list-group-item">
+                  <div class="dropdown-toggle btn-link" id="dropdownMenu4" data-toggle="dropdown">
+                      Help <span class="caret"></span>
+                  </div>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu4">
+  						<li role="menuitem" tabindex="-1"><a href='#' id="feedback" title="Leave feedback about this page"><span class="glyphicon glyphicon-comment text-primary"></span> Feedback</a></li>
+						<li role="presentation" class="divider"></li>
+                        <li role="menuitem" tabindex="-1"> <a  href="/FAQ"><span class="glyphicon glyphicon-question-sign text-primary"></span> FAQ</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li role="menuitem" tabindex="-1"> <a href="/Help/Contact"><span class="glyphicon glyphicon-envelope text-primary"></span> Contact NIPS</a></li>
+						<li role="presentation" class="divider"></li>
+						<li role="menuitem" tabindex="-1"> <a href="/About"><span class="glyphicon glyphicon-info-sign text-primary"></span> About NIPS</a></li>
+						<li role="presentation" class="divider"></li>
+						<li role="menuitem" tabindex="-1"> <a href="/Profile/create"><span class="glyphicon glyphicon-user text-primary"></span> Create an Account</a></li>
+						<li role="presentation" class="divider"></li>
+						<li role="menuitem" tabindex="-1"> <a href="/Profile/resetpassword"><span class="glyphicon glyphicon-user text-primary"></span> Forgot Password</a></li>
+						<li role="presentation" class="divider"></li>
+						<li role="menuitem" tabindex="-1"> <a href="/MergeAccounts"><i class="fa fa-user-plus text-primary"></i> Merge Accounts</a></li>
+						<li role="presentation" class="divider"></li>
+						<li role="menuitem" tabindex="-1"> <a href="/Help/WebSiteWelcome2014"><span class="glyphicon glyphicon-info-sign text-primary"></span> New Website Tips</a></li>
+						<li role="presentation" class="divider"></li>
+						<li role="menuitem" tabindex="-1"> <a href="/public/PrivacyPolicy"><span class="glyphicon glyphicon-info-sign text-primary"></span> Privacy Policy</a></li>
+                      </ul>
+                </div><!--HelpListGroup-->
+                                  
+				
+				
+                  <!--=============Account================-->
+                  <div class="dropdown list-group-item">
+                      <div class="dropdown-toggle btn-link" id="account" data-toggle="dropdown">
+                          <span>Account <span class="caret"></span></span>
+                      </div>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="account">
+						
+                        <li role="menuitem" > <a  href="/EditProfile"><span class="glyphicon glyphicon-edit text-primary"></span> Edit Profile</a></li>
+						  <li role="presentation" class="divider"></li>
+					  <li role="menuitem" > <a  href="/Profile/change-password"><span class="glyphicon glyphicon-asterisk text-primary"></span> Change Password</a></li>
+                        <li role="presentation" class="divider"></li>
+                        <li role="menuitem" > <a  href="/MergeAccounts"><i class="fa fa-share-alt text-primary"></i> Merge Accounts</a></li>
+					  <li role="presentation" class="divider"></li>
+					  <li role="menuitem" > <a  href="/Profile/create"><i class="fa fa-user-plus text-primary"></i> Create New Account</a></li>
+                        <li role="presentation" class="divider"></li>
+					  <li role="menuitem" > <a  href="/Profile/resetpassword"><i class="fa fa-unlock-alt text-primary"></i> Recover Lost Password</a></li>
+                        <li role="presentation" class="divider"></li>
+					  <li role="menuitem" > <a  href="/accounts/login?nextp=/"><span class="glyphicon glyphicon-log-in text-primary"></span> Log In</a></li>
+                        <li role="presentation" class="divider"></li>						  
+					  <li role="menuitem" > <a  href="/logout"><span class="glyphicon glyphicon-log-out text-primary"></span> Log Out </a></li>
+                      </ul>
+                    </div>
+                <!--=============Account================-->
+				
+				
+				
+				
+                
+                  <a href="/Conferences/2015/Pricing" class="list-group-item">Pricing</a>
+                  <a href="/Register/view-registration" class="list-group-item">Registration Closed</a>
+                
+                  
+                  
+	                  <a href="/Conferences/2015/Schedule" class="list-group-item">Schedule</a>
+				  
+				  
+                  
+	                  <a href="/Conferences/2015/Dates" class="list-group-item">Dates</a>
+				  
+				 
+				  
+				  
+                  <div class="dropdown list-group-item" id="program_books">
+                    <div class="dropdown-toggle btn-link" id="program_dropdown" data-toggle="dropdown">
+                        Program Books <span class="caret"></span>
+                    </div>
+					
+	                    <ul class="dropdown-menu" role="menu" aria-labelledby="program_dropdown">
+	                      <li role="menuitem" tabindex="-1"> <a href="http://media.nips.cc/Conferences/2015/NIPS-2015-Conference-Book.pdf"> Conference (pdf)</a></li>
+	                      <li role="presentation" class="divider"></li>	
+						  
+							  <li role="menuitem" tabindex="-1"> <a href="/Conferences/2015/Workshopbook/100"> Workshop Book PDF</a></li>
+							  <li role="menuitem" tabindex="-1"> <a href="/Conferences/2015/Workshopbook/140"> Workshop Book PDF (Large Type)</a></li>
+                              <li role="menuitem" tabindex="-1"> <a href="https://nips2015workshops.sched.org"> Workshop Program on Sched.org</a></li>
+							
+						  
+	                    </ul>
+					
+                  </div>
+                  
+                  <div class="dropdown list-group-item">
+                    <div class="dropdown-toggle btn-link" id="dropdownMenu3" data-toggle="dropdown">
+                        Submissions <span class="caret"></span>
+                    </div>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
+					  
+                      <li role="menuitem" tabindex="-1"> <a href="/Conferences/2015/Schedule?type=Poster"> Accepted Papers 2015</a></li>
+					  <li role="presentation" class="divider"></li>	
+					  
+					  
+					  <li role="presentation" class="divider"></li>
+                      <li role="menuitem" tabindex="-1"> <a href="https://cmt.research.microsoft.com/NIPS2015/"> Author/Reviewer Logon at CMT</a></li>
+                      <li role="presentation" class="divider"></li>
+                      <li role="menuitem" tabindex="-1"> <a href="/Conferences/2015/PaperInformation/AuthorSubmissionInstructions"> Submission Info</a></li>
+                      <li role="presentation" class="divider"></li>
+                      <li role="menuitem" tabindex="-1"> <a  href="/Conferences/2015/PaperInformation/EvaluationCriteria">Guidelines</a></li>
+                      <li role="presentation" class="divider"></li>
+                      <li role="menuitem" tabindex="-1"> <a  href="/Conferences/2015/PaperInformation/Keywords">Keywords</a></li>
+                      <li role="presentation" class="divider"></li>
+                      <li role="menuitem" tabindex="-1"> <a  href="/Conferences/2015/PaperInformation/StyleFiles">Style Files</a></li>
+					  <li role="presentation" class="divider"></li>
+					  
+						  <li role="menuitem" tabindex="-1" class="menuright">Calls 2015</li>
+						  <li role="menuitem" tabindex="-1" class="menuright"><a href="/Conferences/2015/CallForDemonstrations">Call For Demonstrations</a></li>
+						  <li role="menuitem" tabindex="-1" class="menuright"><a href="/Conferences/2015/CallForWorkshops">Call For Workshops</a>
+						  <li role="menuitem" tabindex="-1" class="menuright"><a href="/Conferences/2015/CallForSymposia">Call For Symposia</a></li>
+					  
+					  
+						  <li role="menuitem" tabindex="-1" class="menuright">Calls 2015</li>
+						  <li role="menuitem" tabindex="-1" class="menuright"><a href="/Conferences/2015/CallForPapers">Call For Papers</a></li>
+						  
+					  
+                    </ul>
+                  </div>
+				  
+
+				  
+                  
+	                  <a href="/Conferences/2015/Sponsors" class="list-group-item">Sponsors</a>
+				  
+				  
+				  
+				
+				  
+                          
+		  	                  <div class="dropdown list-group-item">
+		  	                      <div class="dropdown-toggle btn-link" data-toggle="dropdown" id="financialHelp">
+		  	                          Financial Help <span class="caret"></span>
+		  	                      </div>
+		  	                          <ul class="dropdown-menu" role="menu" aria-labelledby="financialHelp">
+		  	                              <li role="menuitem"><a href="/Volunteers/volunteerapplication">Student Volunteer Application</a></li>
+		  	                              <li role="presentation" class="divider"></li>
+		  	                              <li role="menuitem"><a href="/TravelApplication">Student Travel Support</a></li>
+		  	                          </ul>
+                        
+		  	                  </div>
+
+				
+                  
+                  
+                  
+                  <a href="/Conferences/2015/Awards" class="list-group-item">Awards</a>
+				  
+                  <!--<a href="/Conferences/2015/Committees" class="list-group-item">Committees</a>-->
+				  <a href="https://papers.nips.cc" class="list-group-item">Publications</a>
+				  <a href="/Conferences/2015/Board" class="list-group-item">Board</a>
+                  <a href="/Conferences/2015/Committees" class="list-group-item">Committees</a>
+                  <a href="/Conferences/FutureMeetings" class="list-group-item">Future Meetings</a>
+                  
+                </div><!--Sidebar ListGroup-->
+              </div><!--/sidebar on the left-->
+
+              
+
+        
+        
+      <main id="main"> 
+
+            
+    
+<!--JUst above the HTML-->
+    <div class="col-xs-12 col-sm-9">
+        <div>
+        <div><div><h3>NIPS 2015 Accepted Papers</h3><p><br></p>
+<i><span class="larger-font">Double or Nothing: Multiplicative Incentive Mechanisms for Crowdsourcing</span></i><br><b>
+Nihar Shah*, UC Berkeley; Dengyong Zhou, MSR</b><br><br><i><span class="larger-font">Learning with Symmetric Label Noise: The Importance of Being Unhinged</span></i><br><b>
+Brendan van Rooyen, NICTA; Aditya Menon*, NICTA; Robert Williamson, NICTA</b><br><br><i><span class="larger-font">Algorithmic Stability and Uniform Generalization</span></i><br><b>
+Ibrahim Alabdulmohsin*, KAUST</b><br><br><i><span class="larger-font">Adaptive Low-Complexity Sequential Inference for Dirichlet Process Mixture Models</span></i><br><b>
+Theodoros Tsiligkaridis*, MIT Lincoln Laboratory; Keith Forsythe, MIT Lincoln Laboratory</b><br><br><i><span class="larger-font">Covariance-Controlled Adaptive Langevin Thermostat for Large-Scale Bayesian Sampling</span></i><br><b>
+Xiaocheng Shang, University of Edinburgh; Zhanxing Zhu*, University of Edinburgh; Benedict Leimkuhler, University of Edinburgh; Amos J. Storkey, University of Edinburgh</b><br><br><i><span class="larger-font">Robust Portfolio Optimization</span></i><br><b>
+Huitong Qiu*, Johns Hopkins University; Fang Han, ; Han Liu, Princeton University; Brian Caffo, </b><br><br><i><span class="larger-font">Logarithmic Time Online Multiclass prediction</span></i><br><b>
+Anna Choromanska*, Courant Institute, NYU; John Langford, Microsoft Research New York</b><br><br><i><span class="larger-font">Planar Ultrametric Rounding for Image Segmentation</span></i><br><b>
+Julian Yarkony*, Dr.; Charless  Fowlkes, UC Irvine</b><br><br><i><span class="larger-font">Expressing an Image Stream with a Sequence of Natural Sentences</span></i><br><b>
+Cesc Park, Seoul National University; Gunhee Kim*, Seoul National University</b><br><br><i><span class="larger-font">Parallel Correlation Clustering on Big Graphs</span></i><br><b>
+Xinghao Pan*, UC Berkeley; Dimitris Papailiopoulos, UC Berkeley; Benjamin Recht, UC Berkeley; Kannan Ramchandran, UC Berkeley; Michael Jordan, UC Berkeley</b><br><br><i><span class="larger-font">Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks</span></i><br><b>
+Shaoqing Ren, USTC; Kaiming He*, Microsoft Research Asia; Ross Girshick, Microsoft Research; Jian Sun, Microsoft Research Asia</b><br><br><i><span class="larger-font">Space-Time Local Embeddings</span></i><br><b>
+Ke SUN*, University of Geneva; Jun Wang, Expedia, Geneva; Alexandros Kalousis, ; Stephane Marchand-Maillet, University of Geneva</b><br><br><i><span class="larger-font">A Convergent Gradient Descent Algorithm for Rank Minimization and Semidefinite Programming from Random Linear Measurements</span></i><br><b>
+Qinqing Zheng*, University of Chicago; John Lafferty, University of Chicago</b><br><br><i><span class="larger-font">Smooth Interactive Submodular Set Cover</span></i><br><b>
+Bryan He*, Caltech; Yisong Yue, Caltech</b><br><br><i><span class="larger-font">Perceiving Physical Object Properties by Integrating a Physics Engine with Deep Learning</span></i><br><b>
+Jiajun Wu*, MIT; Ilker Yildirim, MIT; William Freeman, MIT; Josh Tenenbaum, MIT</b><br><br><i><span class="larger-font">On the Pseudo-Dimension of Nearly Optimal Auctions</span></i><br><b>
+Jamie Morgenstern*, University of Pennsylvania; Tim Roughgarden, </b><br><br><i><span class="larger-font">Unlocking neural population non-stationarities using hierarchical dynamics models</span></i><br><b>
+Mijung Park*, UCL; Gergo Bohner, Gatsby Unit, UCL; Jakob Macke, </b><br><br><i><span class="larger-font">Bayesian Manifold Learning: Locally Linear Latent Variable Model (LL-LVM)</span></i><br><b>
+Mijung Park*, UCL; Wittawat Jitkrittum, Gatsby unit, UCL; Ahmad Qamar, ; Zoltan Szabo, UCL; Lars Buesing, ; Maneesh Sahani, </b><br><br><i><span class="larger-font">Color Constancy by Learning to Predict Chromaticity from Luminance</span></i><br><b>
+Ayan Chakrabarti*, TTI Chicago</b><br><br><i><span class="larger-font">Fast and Accurate Inference of Plackett–Luce Models</span></i><br><b>
+Lucas Maystre*, EPFL; Matthias Grossglauser, EPFL</b><br><br><i><span class="larger-font">Probabilistic Line Searches for Stochastic Optimization</span></i><br><b>
+Maren Mahsereci, MPI for Intelligent Systems; Philipp Hennig*, MPI Tübingen</b><br><br><i><span class="larger-font">Inferring Algorithmic Patterns with Stack-Augmented Recurrent Nets</span></i><br><b>
+Armand Joulin*, Facebook AI research; Tomas Mikolov, Facebook AI Research</b><br><br><i><span class="larger-font">Where are they looking?</span></i><br><b>
+Adria Recasens*, MIT; Aditya Khosla, MIT; Carl Vondrick, MIT; Antonio Torralba, MIT</b><br><br><i><span class="larger-font">Minimax Regret for Unfair Bandits 004</span></i><br><b>
+Tor Lattimore*, University of Alberta</b><br><br><i><span class="larger-font">On the Limitation of Spectral Methods: From the Gaussian Hidden Clique Problem to Rank-One Perturbations of Gaussian Tensors</span></i><br><b>
+Daniel Reichman*, Cornell University; Andrea Montanari, Stanford; Ofer  Zeitouni, Weizmann Institute and Courant Institute</b><br><br><i><span class="larger-font">Measuring Sample Quality with Stein's Method</span></i><br><b>
+Jack Gorham, Stanford University; Lester Mackey*, Stanford</b><br><br><i><span class="larger-font">Bidirectional Recurrent Convolutional Networks for Multi-Frame Super-Resolution</span></i><br><b>
+Yan Huang*, CRIPAC, CASIA; Wei Wang, NLPR,CASIA; Liang Wang, </b><br><br><i><span class="larger-font">Bounding errors of Expectation-Propagation</span></i><br><b>
+Guillaume Dehaene*, University of Geneva; Simon Barthelmé, Gipsa-lab CNRS</b><br><br><i><span class="larger-font">A fast, universal algorithm to learn parametric nonlinear embeddings</span></i><br><b>
+Miguel Carreira-Perpinan*, UC Merced; Maksym  Vladymyrov, Yahoo</b><br><br><i><span class="larger-font">Texture synthesis and the controlled generation of natural stimuli using convolutional neural networks</span></i><br><b>
+Leon Gatys*, University of Tübingen; Alexander Ecker, University of Tuebingen; Matthias Bethge, CIN, University Tübingen</b><br><br><i><span class="larger-font">Extending Gossip Algorithms to Distributed Estimation of U-statistics</span></i><br><b>
+Igor Colin*, Télécom ParisTech; Aurélien Bellet, Telecom ParisTech; Joseph Salmon, Telecom Paristech; Stéphan Clémençon, Telecom ParisTech</b><br><br><i><span class="larger-font">Streaming, Distributed Variational Inference for Bayesian Nonparametrics</span></i><br><b>
+Trevor Campbell*, MIT; Julian Straub, Mit; John Fisher, MIT; Jonathan How, </b><br><br><i><span class="larger-font">Learning visual biases from human imagination</span></i><br><b>
+Carl Vondrick*, MIT; Hamed Pirsiavash, MIT; Aude Oliva, MIT; Antonio Torralba, MIT</b><br><br><i><span class="larger-font">Smooth and Strong: MAP Inference with Linear Convergence</span></i><br><b>
+Ofer Meshi*, TTI Chicago; Mehrdad Mahdavi, TTI Chicago; Alex Schwing, University of Toronto</b><br><br><i><span class="larger-font">Copeland Dueling Bandits</span></i><br><b>
+Masrour Zoghi*, University of Amsterdam; Zohar Karnin, Yahoo Labs ; Shimon Whiteson, University of Amsterdam; Maarten de Rijke, University of Amsterdam</b><br><br><i><span class="larger-font">Optimal Ridge Detection using Coverage Risk</span></i><br><b>
+Yen-Chi Chen*, Carnegie Mellon University; Christopher Genovese, Carnegie Mellon University; Shirley Ho, Carnegie Mellon University; Larry Wasserman, Carnegie Mellon University</b><br><br><i><span class="larger-font">Top-$k$ Multiclass SVM</span></i><br><b>
+Maksim Lapin*, MPI Informatics; Matthias Hein, Saarland University; Bernt Schiele, Max Planck Institute for Informatics</b><br><br><i><span class="larger-font">Policy Evaluation Using the Ω-Return</span></i><br><b>
+Philip Thomas*, ; George Konidaris, Duke; Scott Niekum, UT Austin; Georgios Theocharous, Adobe</b><br><br><i><span class="larger-font">Orthogonal NMF through Subspace Exploration</span></i><br><b>
+Megasthenis Asteris*, University of Texas at Austin; Dimitris Papailiopoulos, UC Berkeley; Alex Dimakis, Utaustin</b><br><br><i><span class="larger-font">Stochastic Online Greedy Learning with Semi-bandit Feedbacks</span></i><br><b>
+Tian Lin*, Tsinghua University; Jian Li, Tsinghua University; Wei Chen, Microsoft.com</b><br><br><i><span class="larger-font">Deeply Learning the Messages in Message Passing Inference</span></i><br><b>
+Guosheng Lin*, The University of Adelaide; Chunhua Shen, ; Ian Reid, University of Adelaide; Anton Van Den Hengel, University of Adelaide</b><br><br><i><span class="larger-font">Synaptic Sampling: A Bayesian Approach to Neural Network Plasticity and Rewiring</span></i><br><b>
+David Kappel*, Graz University of Technology; Stefan Habenschuss, ; Robert Legenstein, ; Wolfgang Maass, </b><br><br><i><span class="larger-font">Accelerated Proximal Gradient Methods for Nonconvex Programming</span></i><br><b>
+Li Huan, Peking University; Zhouchen Lin*, Peking University</b><br><br><i><span class="larger-font">Approximating Sparse PCA from Incomplete Data</span></i><br><b>
+Malik Magdon-Ismail*, RPI; Petrod Drineas, ; ABHISEK KUNDU, RENSSELAER POLYTECHNIC INST</b><br><br><i><span class="larger-font">Influence Functions for Machine Learning: Nonparametric  Estimators for Entropies, Divergences and Mutual Informations</span></i><br><b>
+Kirthevasan Kandasamy*, CMU; Akshay Krishnamurthy, CMU; Barnabas Poczos, Carnegie Mellon University; Larry Wasserman, Carnegie Mellon University; James Robins, Harvard University</b><br><br><i><span class="larger-font">Column Selection via Adaptive Sampling</span></i><br><b>
+Saurabh Paul*, Rensselaer Polytechnic Inst.; Malik Magdon-Ismail, RPI; Petrod Drineas, </b><br><br><i><span class="larger-font">HONOR: Hybrid Optimization for NOn-convex Regularized problems</span></i><br><b>
+Pinghua Gong*, University of Michigan-Ann Arbor; Jieping Ye, University of Michigan</b><br><br><i><span class="larger-font">3D Object Proposals for Accurate Object Class Detection</span></i><br><b>
+Xiaozhi Chen, Tsinghua University; Kaustav Kundu, University of Toronto; Yukun Zhu, University of Toronto; Andrew Berneshawi, University of Toronto; Huimin Ma, Tsinghua University; Sanja Fidler, University of Toronto; Raquel Urtasun*, University of Toronto</b><br><br><i><span class="larger-font">Algorithms with Logarithmic or Sublinear Regret for  Constrained Contextual Bandits</span></i><br><b>
+Huasen Wu*, University of California, Davi; R. Srikant, University of Illinois, Urbana-Champaign; Xin  Liu, University of California, Davis; Chong Jiang, University of Illinois, Urbana-Champaign</b><br><br><i><span class="larger-font">Tensorizing Neural Networks</span></i><br><b>
+Alexander Novikov*, Skolkovo institute of science ; Dmitry Podoprihin, msu; Anton Osokin, Inria; Dmitry Vetrov, </b><br><br><i><span class="larger-font">Parallelizing MCMC with Random Partition Trees</span></i><br><b>
+Xiangyu Wang, Duke University; Fangjian Guo*, Duke University; Katherine Heller, Duke University; David Dunson, Duke University</b><br><br><i><span class="larger-font">A Reduced-Dimension fMRI Shared Response Model</span></i><br><b>
+Po-Hsuan Chen*, Princeton University; Janice Chen, ; Yaara Yeshurun-Dishon, ; Uri Hasson, Princeton University; James Haxby, ; Peter Ramadge, Princeton</b><br><br><i><span class="larger-font">Spectral Learning of Large Structured HMMs for Comparative Epigenomics</span></i><br><b>
+Chicheng Zhang, UC San Diego; Jimin Song, Rutgers; Kamalika Chaudhuri, UCSD; Kevin Chen*, Rutgers</b><br><br><i><span class="larger-font">Individual Planning in Infinite-Horizon Multiagent Settings: Inference, Structure and Scalability</span></i><br><b>
+Xia Qu, Epic Systems; Prashant Doshi*, University of Georgia</b><br><br><i><span class="larger-font">Estimating Mixture Models via Mixtures of Polynomials</span></i><br><b>
+Sida Wang*, Stanford University; percy Liang, Stanford University; Arun Chaganty, Stanford</b><br><br><i><span class="larger-font">On the Global Linear Convergence of Frank-Wolfe Optimization Variants</span></i><br><b>
+Simon Lacoste-Julien*, INRIA; Martin Jaggi, ETH Zurich</b><br><br><i><span class="larger-font">Deep Knowledge Tracing</span></i><br><b>
+Chris Piech*, Stanford; Jonathan Bassen, stanford.edu; Jonathan Huang, google.com; Surya Ganguli, stanford.edu; Mehran Sahami, stanford.edu; Leonidas Guibas, stanford.edu; Jascha Sohl-Dickstein, stanford.edu</b><br><br><i><span class="larger-font">Moment matching for LDA and discrete ICA</span></i><br><b>
+Anastasia Podosinnikova*, INRIA/ENS; Simon Lacoste-Julien, INRIA; Francis Bach, INRIA - ENS</b><br><br><i><span class="larger-font">Efficient Compressive Phase Retrieval with Constrained Sensing Vectors</span></i><br><b>
+Sohail Bahmani*, Georgia Tech.; Justin Romberg, Georgia Institute of Technology</b><br><br><i><span class="larger-font">Barrier Frank-Wolfe for Marginal Inference</span></i><br><b>
+Rahul Krishnan*, New York University; Simon Lacoste-Julien, INRIA; David Sontag, NYU</b><br><br><i><span class="larger-font">Learning Theory and Algorithms for Forecasting Non-stationary Time Series</span></i><br><b>
+Vitaly Kuznetsov*, Courant Institute; Mehryar Mohri, Courant Institute and Google</b><br><br><i><span class="larger-font">Compressive spectral embedding: sidestepping the SVD</span></i><br><b>
+Dinesh Ramasamy*, UC Santa Barbara; Upamanyu Madhow, UC Santa Barbara</b><br><br><i><span class="larger-font">A Nonconvex Optimization Framework for Low Rank Matrix Estimation</span></i><br><b>
+Tuo Zhao*, ; Zhaoran Wang, Princeton University; Han Liu, Princeton University</b><br><br><i><span class="larger-font">Automatic Variational Inference in Stan</span></i><br><b>
+Alp Kucukelbir*, ; Rajesh Ranganath, Princeton University; Andrew Gelman, Columbia University; David Blei, Columbia University</b><br><br><i><span class="larger-font">Attention-Based Models for Speech Recognition</span></i><br><b>
+Jan Chorowski*, University of Wroclaw; Dzmitry Bahdanau, Jacobs University, Germany; Dmitriy Serdyuk, Université de Montréal; Kyunghyun Cho, NYU; Yoshua Bengio, U. Montreal</b><br><br><i><span class="larger-font">Closed-form Estimators for High-dimensional Generalized Linear Models</span></i><br><b>
+Eunho Yang*, IBM Thomas J. Watson Research Center; Aurelie  Lozano, IBM Research; Pradeep Ravikumar, University of Texas at Austin</b><br><br><i><span class="larger-font">Online F-Measure Optimization</span></i><br><b>
+Robert Busa-Fekete*, UPB; Balazs Szorenyi, The Technion/University of Szeged; Krzysztof Dembczynski, PUT; Eyke Hullermeier, Marburguniversity</b><br><br><i><span class="larger-font">Online Rank Elicitation for Plackett-Luce: A Dueling Bandits Approach</span></i><br><b>
+Balazs Szorenyi, The Technion/University of Szeged; Robert Busa-Fekete*, UPB; Adil Paul, UPB; Eyke Hullermeier, Marburguniversity</b><br><br><i><span class="larger-font">On Submodularity of M-Best-Diverse-Labelings</span></i><br><b>
+Alexander Kirillov*, MSU; Dmitrij Schlesinger, TU Dresden; Dmitry Vetrov, ; Carsten Rother, TU Dresden; Bogdan Savchynskyy, TU Dresden</b><br><br><i><span class="larger-font">Tractable Bayesian Network Structure Learning with Bounded Vertex Cover Number</span></i><br><b>
+Janne Korhonen, University of Helsinki; Pekka Parviainen*, Aalto University</b><br><br><i><span class="larger-font">Learning Large-Scale Poisson DAG Models based on OverDispersion Scoring</span></i><br><b>
+Gunwoong Park*, UW, Madison; Garvesh Raskutti, University of Wisconsin, Madison</b><br><br><i><span class="larger-font">Training Restricted Boltzmann Machine via the ￼Thouless-Anderson-Palmer free energy</span></i><br><b>
+Marylou Gabrie, Ecole Normale Superieure; Eric Tramel, LPS, École Normale Supérieure; Florent Krzakala*, Ecole Normale Superieure CNRS</b><br><br><i><span class="larger-font">Character-level Convolutional Networks for Text Classification</span></i><br><b>
+Xiang Zhang*, New York University; Junbo Zhao, New York University; Yann LeCun, New York University</b><br><br><i><span class="larger-font">Semi-Supervised Robust Feature-Sample Linear Discriminant Analysis for Neurodegenerative Brain Disorders Diagnosis</span></i><br><b>
+Ehsan Adeli-M.*, UNC-Chapel Hill; Kim-Han Thung, UNC-Chapel Hill; Le An, UNC-Chapel Hill; Feng Shi, UNC-Chapel Hill; Dinggang Shen, UNC-Chapel Hill</b><br><br><i><span class="larger-font">Black-box optimization of noisy functions with unknown smoothness</span></i><br><b>
+jean-bastien grill, INRIA Lille - Nord Europe; Michal Valko*, INRIA Lille - Nord Europe; Remi Munos, INRIA Lille</b><br><br><i><span class="larger-font">Recovering Communities in the General Stochastic Block Model Without Knowing the Parameters</span></i><br><b>
+Emmanuel Abbe*, Princeton University; Colin Sandon, Princeton University</b><br><br><i><span class="larger-font">Deep learning with Elastic Averaging SGD</span></i><br><b>
+Sixin Zhang*, New York University; Anna Choromanska, Courant Institute, NYU; Yann LeCun, New York University</b><br><br><i><span class="larger-font">Monotone k-Submodular Function Maximization with Size Constraints</span></i><br><b>
+Naoto Ohsaka*, The University of Tokyo; Yuichi Yoshida, National Institute of Informatics</b><br><br><i><span class="larger-font">Active Learning from Weak and Strong Labelers</span></i><br><b>
+Chicheng Zhang*, UC San Diego; Kamalika Chaudhuri, UCSD</b><br><br><i><span class="larger-font">On the Optimality of Classifier Chain for Multi-label Classification</span></i><br><b>
+Weiwei Liu*, UTS; Ivor Tsang, "University of Technology, Sydney"</b><br><br><i><span class="larger-font">Robust Regression via Hard Thresholding</span></i><br><b>
+Purushottam Kar*, Microsoft Research India; Prateek Jain, Microsoft Research; Kush Bhatia, Microsoft Research</b><br><br><i><span class="larger-font">Locally Non-linear Embeddings for Extreme Multi-label Learning</span></i><br><b>
+Purushottam Kar*, Microsoft Research India; Prateek Jain, Microsoft Research; Manik Varma, Microsoft Research India; Kush Bhatia, Microsoft Research; Himanshu Jain, IIT Delhi</b><br><br><i><span class="larger-font">Solving Random Quadratic Systems of Equations Is Nearly as Easy as Solving Linear Systems</span></i><br><b>
+Yuxin Chen*, Stanford University; Emmanuel Candes, Stanford University</b><br><br><i><span class="larger-font">A Hierarchical Approach to Individualized Disease Trajectory Predictions in Heterogeneous Populations</span></i><br><b>
+Peter Schulam*, Johns Hopkins University; Suchi Saria, Johnshopkins</b><br><br><i><span class="larger-font">Subspace Clustering with Irrelevant Features via Robust Dantzig Selector </span></i><br><b>
+Chao Qu*, NUS; Huan Xu, National University of Singapore</b><br><br><i><span class="larger-font">Sparse PCA via Bipartite Matchings</span></i><br><b>
+Megasthenis Asteris*, University of Texas at Austin; Dimitris Papailiopoulos, UC Berkeley; Anastasios Kyrillidis, University of Texas at Austin; Alex Dimakis, Utaustin</b><br><br><i><span class="larger-font">Fast Randomized Kernel Methods with Statistical Guarantees</span></i><br><b>
+Ahmed El Alaoui*, UC Berkeley; Michael Mahoney, UC Berkeley</b><br><br><i><span class="larger-font">Online Learning for Adversaries with Memory: Price of Past Mistakes</span></i><br><b>
+Oren Anava*, Technion; Elad Hazan, Princeton University; Shie Mannor, Technion</b><br><br><i><span class="larger-font">Convolutional spike-triggered covariance analysis for neural subunit models</span></i><br><b>
+Anqi Wu*, Princeton University; Memming Park, Stony Brook; Jonathan Pillow, Princeton University</b><br><br><i><span class="larger-font">Convolutional LSTM Network: A Machine Learning Approach for Precipitation Nowcasting</span></i><br><b>
+Xingjian Shi*, HKUST; Zhourong Chen, The Hong Kong University of Science and Technology; Hao Wang, HKUST; Dit Yan Yeung, HKUST; Wai-kin Wong, ; Wang-chun WOO, </b><br><br><i><span class="larger-font">GAP Safe screening rules for sparse multi-task and multi-class models</span></i><br><b>
+Eugene Ndiaye, Institut Mines-Télécom, Télécom ParisTech, CNRS LTCI; Olivier Fercoq, Telecom ParisTech; Alexandre Gramfort*, Telecom Paristech; Joseph Salmon, Telecom Paristech</b><br><br><i><span class="larger-font">Empirical Localization of Homogeneous Divergences on Discrete Sample Spaces</span></i><br><b>
+Takashi Takenouchi*, Future University Hakodate; Takafumi Kanamori, Nagoya University</b><br><br><i><span class="larger-font">Statistical Model Criticism using Kernel Two Sample Tests</span></i><br><b>
+James Lloyd*, University of Cambridge; Zoubin Ghahramani, University of Cambridge</b><br><br><i><span class="larger-font">Precision-Recall-Gain Curves: PR Analysis Done Right</span></i><br><b>
+Peter Flach*, University of Bristol; Meelis Kull, University of Bristol</b><br><br><i><span class="larger-font">A Generalization of Submodular Cover via the Diminishing Return Property on the Integer Lattice</span></i><br><b>
+Tasuku Soma*, University of Tokyo; Yuichi Yoshida, National Institute of Informatics</b><br><br><i><span class="larger-font">Bidirectional Recurrent Neural Networks as Generative Models</span></i><br><b>
+Mathias Berglund*, Aalto University; Tapani Raiko, Aalto University; Mikko Honkala, Nokia Labs; Leo Kärkkäinen, Nokia Labs; Akos Vetek, Nokia Labs; Juha Karhunen, Aalto University</b><br><br><i><span class="larger-font">Quartz: Randomized Dual Coordinate Ascent with Arbitrary Sampling</span></i><br><b>
+Zheng Qu*, University of Edinburgh; Peter Richtarik, University of Edinburgh; Tong Zhang, Rutgers</b><br><br><i><span class="larger-font">Maximum Likelihood Learning With Arbitrary Treewidth via Fast-Mixing Parameter Sets</span></i><br><b>
+Justin Domke*, NICTA</b><br><br><i><span class="larger-font">Hessian-Free Optimization For Learning Deep Multidimensional Recurrent Neural Networks</span></i><br><b>
+Minhyung Cho*, Gracenote; Jaehyung Lee, Gracenote; Chandra Dhir, Gracenote</b><br><br><i><span class="larger-font">Large-scale probabilistic predictors with and without guarantees of validity</span></i><br><b>
+Vladimir Vovk*, Royal Holloway, Univ of London; Ivan Petej, ; Valentina Fedorova, </b><br><br><i><span class="larger-font">Shepard Convolutional Neural Networks</span></i><br><b>
+Jimmy Ren*, SenseTime Group Limited; Li Xu, SenseTime Group Limited; Qiong Yan, SenseTime Group Limited; Wenxiu Sun, SenseTime Group Limited</b><br><br><i><span class="larger-font">Manifold Optimization for Gaussian Mixture Models</span></i><br><b>
+Reshad Hosseini*, University of Tehran; Suvrit Sra, MIT</b><br><br><i><span class="larger-font">Semi-supervised Convolutional Neural Networks for Text Categorization via Region Embedding</span></i><br><b>
+Rie Johnson*, RJ Research Consuulting; Tong Zhang, Rutgers</b><br><br><i><span class="larger-font">Parallel Recursive Best-First AND/OR Search for Exact MAP Inference in Graphical Models</span></i><br><b>
+Akihiro Kishimoto*, IBM Research; Radu Marinescu, IBM Research, Ireland; Adi Botea, IBM Research</b><br><br><i><span class="larger-font">Convolutional Neural Networks with Intra-Layer Recurrent Connections for Scene Labeling</span></i><br><b>
+Ming Liang, Tsinghua University; Xiaolin Hu*, Tsinghua University; Bo Zhang, Tsinghua University</b><br><br><i><span class="larger-font">Bounding the Cost of Search-Based Lifted Inference</span></i><br><b>
+David Smith*, University of Texas at Dallas; Vibhav Gogate, UT Dallas</b><br><br><i><span class="larger-font">Gradient-free Hamiltonian Monte Carlo with Efficient Kernel Exponential Families</span></i><br><b>
+Heiko Strathmann*, University College London; Dino Sejdinovic, University of Oxford; Samuel Livingstone, University College London; Zoltan Szabo, UCL; Arthur Gretton, University Collage London</b><br><br><i><span class="larger-font">Linear Multi-Resource Allocation with Semi-Bandit Feedback</span></i><br><b>
+Tor Lattimore*, University of Alberta; Csaba Szepesvari, University of Alberta; Koby Crammer, Technion</b><br><br><i><span class="larger-font">Unsupervised Learning by Program Synthesis</span></i><br><b>
+Kevin Ellis*, MIT; Josh Tenenbaum, MIT; Armando Solar-Lezama, MIT</b><br><br><i><span class="larger-font">Enforcing balance allows local supervised learning in spiking recurrent networks</span></i><br><b>
+Ralph  Bourdoukan*, Ecole Normale Superieure; Sophie Deneve, GNT, Ecole Normale Superieure</b><br><br><i><span class="larger-font">Fast and Guaranteed Tensor Decomposition via Sketching</span></i><br><b>
+Yining Wang*, Carnegie Mellon University; Hsiao-Yu Tung, Carnegie Mellon University; Animashree Anandkumar, UC Irvine; Alex Smola, Carnegie Mellon University</b><br><br><i><span class="larger-font">Differentially private subspace clustering</span></i><br><b>
+Yining Wang*, Carnegie Mellon University; Yu-Xiang Wang, CMU; Aarti  Singh, CMU</b><br><br><i><span class="larger-font">Predtron: A Family of Online Algorithms for General Prediction Problems</span></i><br><b>
+Prateek Jain, Microsoft Research; Nagarajan Natarajan, UT Austin; Ambuj Tewari*, University of Michigan</b><br><br><i><span class="larger-font">Weighted Theta Functions and Embeddings with Applications to Max-Cut, Clustering and Summarization</span></i><br><b>
+Fredrik Johansson*, Chalmers University, Sweden; Ankani Chattoraj, Chalmers University; Devdatt Dubhashi, Chalmers University, Sweden; Chiranjib Bhattacharyya, Indian Institute of Science</b><br><br><i><span class="larger-font">SGD Algorithms based on Incomplete U-statistics: Large-Scale Minimization of Empirical Risk</span></i><br><b>
+Guillaume Papa*, Telecom paristech; Stéphan Clémençon, Telecom ParisTech; Aurélien Bellet, Telecom ParisTech</b><br><br><i><span class="larger-font">On Top-k Selection in Multi-Armed Bandits and Hidden Bipartite Graphs</span></i><br><b>
+Wei Cao*, Tsinghua University; Jian Li, Tsinghua University; Yufei Tao, CUHK; Zhize Li, Tsinghua University</b><br><br><i><span class="larger-font">The Brain Uses Reliability of Stimulus Information when Making Perceptual Decisions</span></i><br><b>
+Sebastian Bitzer*, TU Dresden; Stefan Kiebel, TU Dresden</b><br><br><i><span class="larger-font">Fast Classification Rates for High-dimensional Conditional Gaussian Models</span></i><br><b>
+Tianyang Li*, UT Austin; Adarsh Prasad, UT Austin; Pradeep Ravikumar, University of Texas at Austin</b><br><br><i><span class="larger-font">Fast Distributed k-Center Clustering with Outliers on Massive Data</span></i><br><b>
+Gustavo Malkomes, Washington University in St. Louis; Matt Kusner, Washington University in STL; Wenlin Chen, Washington University in St. Louis; Kilian Weinberger, Washington University in St. Louis; Benjamin Moseley*, Washington University in St Lo</b><br><br><i><span class="larger-font">Human Memory Search as Initial-Visit Emitting Random Walk</span></i><br><b>
+Kwang-Sung Jun*, University of Wisconsin-Madiso; Xiaojin Zhu, University of Wisconsin-Madison; Timothy Rogers, University of Wisconsin-Madison; Zhuoran Yang, Tsinghua University; ming yuan, University of Wisconsin - Madison</b><br><br><i><span class="larger-font">Non-convex Statistical Optimization for Sparse Tensor Graphical Model</span></i><br><b>
+Wei Sun*, Purdue University; Zhaoran Wang, Princeton University; Han Liu, Princeton University; Guang Cheng, Purdue University</b><br><br><i><span class="larger-font">Convergence Rates of Active Learning for Maximum Likelihood Estimation</span></i><br><b>
+Kamalika Chaudhuri, UCSD; Sham Kakade, University of Washington; Praneeth Netrapalli*, Microsoft Research; Sujay Sangahvi, UTexas-Austin</b><br><br><i><span class="larger-font">Learning to Rotate 3D Objects with Recurrent Convolutional Encoder-Decoder Networks</span></i><br><b>
+Jimei Yang*, UC Merced; Scott Reed, University of Michigan; Ming-Hsuan Yang, UC Merced; Honglak Lee, U. Michigan</b><br><br><i><span class="larger-font">Efficient Exact Gradient Update for training Deep Networks with Very Large Sparse Targets</span></i><br><b>
+Pascal Vincent*, U. Montreal; Alexandre de Brébisson, Université de Montréal; Xavier Bouthillier, Universit de Montréal</b><br><br><i><span class="larger-font">Backpropagation for Energy-Efficient Neuromorphic Computing</span></i><br><b>
+Steve Esser*, IBM Research-Almaden; Rathinakumar Appuswamy, IBM Research-Almaden; Paul Merolla, IBM Research-Almaden; John Arthur, IBM Research-Almaden; Dharmendra Modha, IBM Research-Almaden</b><br><br><i><span class="larger-font">Alternating Minimization for Regression Problems with Vector-valued Outputs</span></i><br><b>
+Prateek Jain*, Microsoft Research; Ambuj Tewari, University of Michigan</b><br><br><i><span class="larger-font">Learning both Weights and Connections for Efficient Neural Network</span></i><br><b>
+Song Han*, Stanford University; Jeff Pool, NVIDIA ; John Tran, NVIDIA; Bill Dally , Stanford University &amp; NVIDIA</b><br><br><i><span class="larger-font">Optimal Rates for Random Fourier Features</span></i><br><b>
+Bharath Sriperumbudur, The Pennsylvania State University; Zoltan Szabo*, UCL</b><br><br><i><span class="larger-font">The Population Posterior and Bayesian Inference on Streams</span></i><br><b>
+James McInerney*, Columbia; Rajesh Ranganath, Princeton University; David Blei, Columbia University</b><br><br><i><span class="larger-font">Frank-Wolfe Bayesian Quadrature: Probabilistic Integration with Theoretical Guarantees</span></i><br><b>
+François-Xavier Briol*, University of Oxford; Chris. Oates, University of Tech., Sydney; Mark Girolami, Univeresity of Warwick; Mike Osborne, U Oxford</b><br><br><i><span class="larger-font">Scheduled Sampling for Sequence Prediction with Recurrent Neural Networks</span></i><br><b>
+Samy Bengio*, Google Research; Oriol Vinyals, Google; Navdeep Jaitly, Google; Noam Shazeer, Google</b><br><br><i><span class="larger-font">Unified View of Matrix Completion under General Structural Constraints</span></i><br><b>
+Suriya Gunasekar*, UT Austin; Arindam Banerjee, University of Minnesota; Joydeep Ghosh, UT Austin</b><br><br><i><span class="larger-font">Efficient Output Kernel Learning for Multiple Tasks</span></i><br><b>
+Pratik Jawanpuria*, Saarlanduniversity; Maksim Lapin, MPI Informatics; Matthias Hein, Saarland University; Bernt Schiele, Max Planck Institute for Informatics</b><br><br><i><span class="larger-font">Scalable Adaptation of State Complexity for Nonparametric Hidden Markov Models</span></i><br><b>
+Michael Hughes*, Brown University; William Stephenson, Brown University; Erik Sudderth, Brown University</b><br><br><i><span class="larger-font">Variational Consensus Monte Carlo</span></i><br><b>
+Maxim Rabinovich*, UC Berkeley; Elaine Angelino, Harvard; Michael Jordan, UC Berkeley</b><br><br><i><span class="larger-font">Newton-Stein Method: A Second Order Method for GLMs via Stein's Lemma</span></i><br><b>
+Murat Erdogdu*, Stanford University</b><br><br><i><span class="larger-font">Practical and Optimal LSH for Angular Distance</span></i><br><b>
+Ilya Razenshteyn*, MIT; Piotr Indyk, ; Ludwig Schmidt, ; Thijs Laarhoven, ; Alexandr Andoni, </b><br><br><i><span class="larger-font">Learning to Linearize Under Uncertainty</span></i><br><b>
+Ross Goroshin*, New York University; Michael Mathieu, New York University; Yann LeCun, New York University</b><br><br><i><span class="larger-font">Finite-Time Analysis of Projected Langevin Monte Carlo</span></i><br><b>
+Sebastien Bubeck*, MSR; Ronen Eldan, ; Joseph Lehec, </b><br><br><i><span class="larger-font">Deep Visual Analogy-Making</span></i><br><b>
+Scott Reed*, University of Michigan; Yi Zhang, University of Michigan; Yuting Zhang, University of Michigan; Honglak Lee, U. Michigan</b><br><br><i><span class="larger-font">Matrix Completion from Fewer Entries: Spectral Detectability and Rank Estimation</span></i><br><b>
+Alaa Saade*, ENS; Florent Krzakala, Ecole Normale Superieure CNRS; Lenka Zdeborová, CEA</b><br><br><i><span class="larger-font">Online Learning with Adversarial Delays</span></i><br><b>
+Kent Quanrud*, UIUC; Daniel Khashabi, UIUC</b><br><br><i><span class="larger-font">Multi-Layer Feature Reduction for Tree Structured Group Lasso via Hierarchical Projection</span></i><br><b>
+Jie Wang*, University of Michigan-Ann Arbor; Jieping Ye, University of Michigan</b><br><br><i><span class="larger-font">Minimum Weight Perfect Matching via Blossom Belief Propagation</span></i><br><b>
+Sungsoo Ahn, KAIST; Sejun Park, KAIST; Michael Chertkov, ; Jinwoo Shin*, KAIST</b><br><br><i><span class="larger-font">Efficient Thompson Sampling for Online ￼Matrix-Factorization Recommendation</span></i><br><b>
+Jaya Kawale*, Adobe Research; Hung Bui, Adobe Research; Branislav Kveton, Adobe Research; Long Tran-Thanh, University of Southampton; Sanjay Chawla, University of Sydney</b><br><br><i><span class="larger-font">Improved Iteration Complexity Bounds of Cyclic Block Coordinate Descent for Convex Problems</span></i><br><b>
+Mingyi Hong*, ; Ruoyu Sun, Stanford university</b><br><br><i><span class="larger-font">Lifted Symmetry Detection and Breaking for MAP Inference</span></i><br><b>
+Timothy Kopp*, University of Rochester; Parag Singla, Indian Institute of Technology; Henry Kautz, University of Rochester</b><br><br><i><span class="larger-font">Evaluating the statistical significance of biclusters</span></i><br><b>
+Jason Lee, Stanford; Yuekai Sun*, Stanford University; Jonathan Taylor, Stanford University</b><br><br><i><span class="larger-font">Discriminative Robust Transformation Learning</span></i><br><b>
+Jiaji Huang*, Duke University; Qiang Qiu, Duke University; Guillermo Sapiro, ; Robert Calderbank, Duke University</b><br><br><i><span class="larger-font">Bandits with Unobserved Confounders: A Causal Approach</span></i><br><b>
+Elias Bareinboim*, ; Andrew Forney, UCLA; Judea Pearl, UCLA</b><br><br><i><span class="larger-font">Scalable Semi-Supervised Aggregation of Classifiers</span></i><br><b>
+Akshay Balsubramani*, Ucsd; Yoav Freund, UC San Diego</b><br><br><i><span class="larger-font">Online Learning with Gaussian Payoffs and Side Observations</span></i><br><b>
+Yifan Wu*, University of Alberta; Andras Gyorgy, University of Alberta; Csaba Szepesvari, Alberta</b><br><br><i><span class="larger-font">Private Graphon Estimation for Sparse Graphs</span></i><br><b>
+Christian Borgs, Microsoft Research; Jennifer Chayes, Microsoft Research; Adam Smith*, </b><br><br><i><span class="larger-font">SubmodBoxes: Near-Optimal Search for a Set of Diverse Object Proposals</span></i><br><b>
+Qing Sun, Virginia Tech; Dhruv Batra*, Virginia Tech</b><br><br><i><span class="larger-font">Fast Second Order Stochastic Backpropagation for Variational Inference</span></i><br><b>
+Kai Fan*, Duke University; Ziteng Wang, ; Jeff Beck, ; James Kwok, Hong Kong University of Science and Technology; Katherine Heller, Duke</b><br><br><i><span class="larger-font">Stronger and Faster Approximate Singular Value Decomposition via the Block Lanczos Method</span></i><br><b>
+Cameron Musco, Massachusetts Institute of Technology; Christopher Musco*, Mass. Institute of Technology</b><br><br><i><span class="larger-font">Cross-Domain Matching for Bag-of-Words Data via Kernel Embeddings of Latent Distributions</span></i><br><b>
+Yuya Yoshikawa*, NAIST; Tomoharu Iwata, Nippon Telegraph and Telephone Corporation; Hiroshi Sawada, NTT; Takeshi Yamada, NTT</b><br><br><i><span class="larger-font">Scalable Automated Inference for Gaussian Process Models</span></i><br><b>
+Amir Dezfouli, The University of New South Wales; Edwin Bonilla*, University of New South Wales</b><br><br><i><span class="larger-font">Fast Bidirectional Probability Estimation in Markov Models</span></i><br><b>
+Siddhartha Banerjee*, Cornell University; Peter Lofgren, Stanford University</b><br><br><i><span class="larger-font">Probabilistic Variational Bounds for Graphical Models</span></i><br><b>
+Qiang Liu*, MIT; alexander ihler, UC irvine; John Fisher, MIT</b><br><br><i><span class="larger-font">Linear Response Methods for Accurate Covariance Estimates from Mean Field Variational Bayes</span></i><br><b>
+Ryan Giordano*, UC Berkeley; Tamara Broderick, MIT; Michael Jordan, UC Berkeley</b><br><br><i><span class="larger-font">Combinatorial Cascading Bandits</span></i><br><b>
+Branislav Kveton*, Adobe Research; Zheng Wen, Yahoo; Azin Ashkan, Technicolor Research; Csaba Szepesvari, Alberta</b><br><br><i><span class="larger-font">Mixing Time Estimation in Reversible Markov Chains from a Single Sample Path</span></i><br><b>
+Daniel Hsu*, Columbia University; Aryeh Kontorovich, Ben Gurion University; Csaba Szepesvari, Alberta</b><br><br><i><span class="larger-font">Policy Gradient for Coherent Risk Measures</span></i><br><b>
+Aviv Tamar*, Technion; Yinlam Chow, Stanford; Mohammad Ghavamzadeh, Adobe Research &amp; INRIA; Shie Mannor, Technion</b><br><br><i><span class="larger-font">Fast Rates for Exp-concave Empirical Risk Minimization</span></i><br><b>
+Tomer Koren*, Technion; Kfir Levy, Technion</b><br><br><i><span class="larger-font">Deep Generative Image Models using a ￼Laplacian Pyramid of Adversarial Networks</span></i><br><b>
+Emily Denton*, New York University; Rob Fergus, Facebook AI Research; Arthur Szlam, Facebook; Soumith Chintala, Facebook AI Research</b><br><br><i><span class="larger-font">Decoupled Deep Neural Network for Semi-supervised Semantic Segmentation</span></i><br><b>
+Seunghoon Hong*, POSTECH; Hyeonwoo Noh, POSTECH; Bohyung Han, Postech</b><br><br><i><span class="larger-font">Equilibrated adaptive learning rates for non-convex optimization</span></i><br><b>
+Yann Dauphin*, Universit? de Montr?al; Harm de Vries, ; Yoshua Bengio, U. Montreal</b><br><br><i><span class="larger-font">BACKSHIFT: Learning causal cyclic graphs from unknown shift interventions</span></i><br><b>
+Dominik Rothenhäusler, ETH Zurich; Christina Heinze*, ETH Zurich; Jonas Peters, MPI T?bingen; Nicolai Meinshausen, ETH Zurich</b><br><br><i><span class="larger-font">Risk-Sensitive and Robust Decision-Making: a CVaR Optimization Approach</span></i><br><b>
+Yinlam Chow*, Stanford; Aviv Tamar, Technion; Marco Pavone, Stanford University; Shie Mannor, Technion</b><br><br><i><span class="larger-font">Asynchronous stochastic approximation: the noise is in the noise and SGD don't care</span></i><br><b>
+Sorathan Chaturapruek*, Stanford University; John Duchi, Stanford; Christopher Re, </b><br><br><i><span class="larger-font">Lifelong Learning with Non-i.i.d. Tasks</span></i><br><b>
+Anastasia Pentina*, IST Austria; Christoph Lampert, Institute of Science and Technology Austria</b><br><br><i><span class="larger-font">Optimal Linear Estimation under Unknown Nonlinear Transform</span></i><br><b>
+Xinyang Yi*, Utaustin; Zhaoran Wang, Princeton University; Constantine Caramanis, UT Austin; Han Liu, Princeton University</b><br><br><i><span class="larger-font">Learning with Group Invariant Features: A Kernel Perspective.</span></i><br><b>
+Youssef Mroueh*, IBM; Stephen Voinea, MIT; Tomaso Poggio, MIT</b><br><br><i><span class="larger-font">Regularized EM Algorithms: A Unified Framework and Statistical Guarantees</span></i><br><b>
+Xinyang Yi*, Utaustin; Constantine Caramanis, UT Austin</b><br><br><i><span class="larger-font">Distributionally Robust Logistic Regression</span></i><br><b>
+Soroosh Shafieezadeh Abadeh*, EPFL; Peyman Mohajerin Esfahani, EPFL; Daniel Kuhn, ?cole Polytechnique F?d?rale de Lausanne (EPFL)</b><br><br><i><span class="larger-font">Adaptive Stochastic Optimization: From Sets to Paths</span></i><br><b>
+Zhan Wei Lim*, NUS; David Hsu, National University of Singapore; Wee Sun Lee, National University of Singapore</b><br><br><i><span class="larger-font">Beyond Convexity: Stochastic Quasi-Convex Optimization</span></i><br><b>
+Elad Hazan, Princeton University; Kfir Levy*, Technion; Shai Shalev-Shwartz, Hebrew University</b><br><br><i><span class="larger-font">An Analytically Tractable Bayesian Approximation to Optimal Point Process Filtering</span></i><br><b>
+Yuval Harel*, Technion; Ron Meir, Technion; Manfred Opper, TU Berlin</b><br><br><i><span class="larger-font">Sum-of-Squares Lower Bounds for Sparse PCA</span></i><br><b>
+Tengyu Ma*, Princeton University; Avi Wigderson, Institute for Advanced Study</b><br><br><i><span class="larger-font">Max-Margin Majority Voting for Learning from Crowds</span></i><br><b>
+Tian Tian*, Tsinghua University; Jun Zhu, Tsinghua University</b><br><br><i><span class="larger-font">Learning with Incremental Iterative Regularization</span></i><br><b>
+Lorenzo Rosasco*, University of Genova; Silvia Villa, IIT-MIT</b><br><br><i><span class="larger-font">Halting in graph kernels</span></i><br><b>
+Mahito Sugiyama, Osaka University; Karsten Borgwardt*, ETH Zurich</b><br><br><i><span class="larger-font">MCMC for Variationally Sparse Gaussian Processes</span></i><br><b>
+James Hensman*, The University of Sheffield; Alex Matthews, Cambridge University; Maurizio Filippone, University of Glasgow; Zoubin Ghahramani, University of Cambridge</b><br><br><i><span class="larger-font">Less is More: Nystr\"om Computational Regularization</span></i><br><b>
+Lorenzo Rosasco*, University of Genova; Alessandro Rudi, ; Raffaello Camoriano, IIT - UNIGE</b><br><br><i><span class="larger-font">Infinite Factorial Dynamical Model</span></i><br><b>
+Isabel Valera*, MPI-SWS; Francisco Ruiz, University Carlos III, Madrid; Lennart Svensson, Chalmers University of Technology, Göteborg; Fernando Perez-Cruz, </b><br><br><i><span class="larger-font">Regularization Path of Cross-Validation Error Lower Bounds</span></i><br><b>
+Atsushi Shibagaki, Nagoya Institute of Technology; Yoshiki Suzuki, Nagoya Institute of Technology; Masayuki Karasuyama, Nagoya Institute of Technology; Ichiro Takeuchi*, Nagoya Institute of Technology</b><br><br><i><span class="larger-font">Attractor Network Dynamics Enable Preplay and Rapid Path Planning in Maze–like Environments</span></i><br><b>
+Dane Corneil*, EPFL; Wulfram Gerstner, EPFL</b><br><br><i><span class="larger-font">Teaching Machines to Read and Comprehend</span></i><br><b>
+Karl Moritz Hermann*, Google DeepMind; Tomas Kocisky, Oxford University; Edward Grefenstette, Google DeepMind; Lasse Espeholt, Google DeepMind; Will Kay, Google DeepMind; Mustafa Suleyman, Google DeepMind; Phil Blunsom, Google DeepMind</b><br><br><i><span class="larger-font">Principal Differences Analysis: Interpretable Characterization of Differences between Distributions</span></i><br><b>
+Jonas Mueller*, MIT; Tommi Jaakkola, MIT</b><br><br><i><span class="larger-font">When are Kalman-Filter Restless Bandits Indexable?</span></i><br><b>
+Christopher Dance*, Xerox Research Centre Europe; Tomi Silander, Xerox Research Centre Europe</b><br><br><i><span class="larger-font">Segregated Graphs and Marginals of Chain Graph Models</span></i><br><b>
+Ilya Shpitser*, University of Southampton</b><br><br><i><span class="larger-font">Efficient Non-greedy Optimization of Decision Trees and Forests</span></i><br><b>
+Mohammad Norouzi, University of Toronto; Maxwell Collins*, UW-Madison; Matthew Johnson, Microsoft Research; David Fleet, University of Toronto; Pushmeet Kohli, Microsoft Research</b><br><br><i><span class="larger-font">Probabilistic Curve Learning: Coulomb Repulsion and the Electrostatic Gaussian Process</span></i><br><b>
+Ye Wang*, Duke Univiersity; David Dunson, Duke University</b><br><br><i><span class="larger-font">Inverse Reinforcement Learning with Locally Consistent Reward Functions</span></i><br><b>
+Quoc Phong Nguyen, National University of Singapore; Bryan Kian Hsiang Low*, National University of Singapore; Patrick Jaillet, Massachusetts Institute of Technology</b><br><br><i><span class="larger-font">Communication Complexity of Distributed Convex Learning and Optimization</span></i><br><b>
+Yossi Arjevani*, Weizmanninstitute; Ohad Shamir, The Weizmann Institute</b><br><br><i><span class="larger-font">End-to-end Learning of Latent Dirichlet Allocation by Mirror-Descent Back Propagation</span></i><br><b>
+Jianshu Chen*, Microsoft Research, Redmond, W; Ji He, University Washington; Yelong Shen, Microsoft Research, Redmond, WA; Lin Xiao, Microsoft; Xiaodong He, Microsoft Research, Redmond, WA; Jianfeng Gao, Microsoft Research, Redmond, WA; Xinying Song, Microsoft Research, Redmond, WA; Deng Li, MSR</b><br><br><i><span class="larger-font">Subset Selection by Pareto Optimization</span></i><br><b>
+Chao Qian*, Nanjing University; Yang Yu, Nanjing University; Zhi-Hua Zhou, Nanjing University</b><br><br><i><span class="larger-font">On the accuracy of self-normalized linear models</span></i><br><b>
+Maxim Rabinovich*, UC Berkeley; Jacob Andreas, UC Berkeley; Dan Klein, UC Berkeley; Michael Jordan, UC Berkeley</b><br><br><i><span class="larger-font">Regret Lower Bound and Optimal Algorithm in Finite Stochastic Partial Monitoring</span></i><br><b>
+Junpei Komiyama*, The University of Tokyo; Junya Honda, The University of Tokyo; Hiroshi Nakagawa, The University of Tokyo</b><br><br><i><span class="larger-font">Is Approval Voting Optimal Given Approval Votes?</span></i><br><b>
+Ariel Procaccia*, Carnegie Mellon University; Nisarg Shah, Carnegie Mellon University</b><br><br><i><span class="larger-font">Regressive Virtual Metric Learning</span></i><br><b>
+Michaël Perrot*, Université de Saint-Etienne; Amaury Habrard, </b><br><br><i><span class="larger-font">Analysis of Robust PCA via Local Incoherence</span></i><br><b>
+Huishuai Zhang*, Syracuse University; Yi Zhou, Syracuse University; Yingbin Liang, Syracuse Univeristy</b><br><br><i><span class="larger-font">Learning to Transduce with Unbounded Memory</span></i><br><b>
+Edward Grefenstette*, Google DeepMind; Karl Moritz Hermann, Google DeepMind; Mustafa Suleyman, Google DeepMind; Phil Blunsom, Google DeepMind</b><br><br><i><span class="larger-font">Max-Margin Deep Generative Models</span></i><br><b>
+Chongxuan Li*, Tsinghua University; Jun Zhu, Tsinghua University; Tianlin Shi, Tsinghua University; Bo Zhang, Tsinghua University</b><br><br><i><span class="larger-font">Spherical Random Features for Polynomial Kernels</span></i><br><b>
+Jeffrey Pennington*, Google; Felix Yu, Columbia University; Sanjiv Kumar, Google</b><br><br><i><span class="larger-font">Rectified Factor Networks</span></i><br><b>
+Djork-Arné Clevert*, Johannes Kepler University; Andreas Mayr, Johannes Kepler University Linz; Thomas Unterthiner, Johannes Kepler University Linz; Sepp Hochreiter, Johannes Kepler University Linz</b><br><br><i><span class="larger-font">Learning Bayesian Networks with Thousands of Variables</span></i><br><b>
+Mauro Scanagattta*, IDSIA; Cassio de Campos, Queen's University Belfast; Giorgio Corani, IDSIA; Marco Zaffalon, IDSIA</b><br><br><i><span class="larger-font">Matrix Completion Under Monotonic Single Index Models</span></i><br><b>
+Ravi Ganti*, UW Madison; Rebecca Willett, University of Wisconsin</b><br><br><i><span class="larger-font">Visalogy: Answering Visual Analogy Questions</span></i><br><b>
+Fereshteh Sadeghi*, University of Washington; Ross Girshick, Microsoft Research; Larry Zitnick, Microsoft Research; Ali Farhadi, University of Washington</b><br><br><i><span class="larger-font">Tree-Guided MCMC Inference for Normalized Random Measure Mixture Models</span></i><br><b>
+Juho Lee*, POSTECH; Seungjin Choi, POSTECH</b><br><br><i><span class="larger-font">Streaming Min-max Hypergraph Partitioning</span></i><br><b>
+Jennifer Iglesias*, Carnegie Mellon University; Dan Alistarh, Microsoft Research; Milan Vojnovic, Microsoft Research</b><br><br><i><span class="larger-font">Collaboratively Learning Preferences from Ordinal Data</span></i><br><b>
+Sewoong Oh*, UIUC; Kiran Thekumparampil, UIUC; Jiaming Xu, </b><br><br><i><span class="larger-font">Biologically Inspired Dynamic Textures for Probing Motion Perception</span></i><br><b>
+Jonathan Vacher*, Université Paris Dauphine; Laurant Perrinet, Institut des neurosciences de la Timone; Andrew Meso, Institut des neurosciences de la Timone; Gabriel Peyré, Ceremade</b><br><br><i><span class="larger-font">Generative Image Modeling Using Spatial LSTMs</span></i><br><b>
+Lucas Theis*, U.Tuebingen; Matthias Bethge, CIN, University Tübingen</b><br><br><i><span class="larger-font">Robust PCA with compressed data</span></i><br><b>
+Wooseok Ha*, The University of Chicago; Rina Foygel Barber, University of Chicago</b><br><br><i><span class="larger-font">Sampling from Probabilistic Submodular Models</span></i><br><b>
+Alkis Gotovos*, ETH Zurich; Hamed Hassani, ETH Zurich; Andreas Krause, ETH</b><br><br><i><span class="larger-font">COEVOLVE: A Joint Point Process Model for Information Diffusion and Network Co-evolution</span></i><br><b>
+Mehrdad Farajtabar*, Georgia Tech; Manuel Gomez Rodriguez, MPI SWS; Yichen Wang, Georgia Institute of Technology; Shuang Li, Georgia Institute of Technology; Hongyuan Zha, Georgia Tech; Le Song, Georgia Institute of Technology</b><br><br><i><span class="larger-font">On Predictive Belief Methods for Dynamical System Learning</span></i><br><b>
+Ahmed Hefny*, Carnegie Mellon University; Carlton Downey, Carnegie Mellon UNiversity; Geoff Gordon, CMU</b><br><br><i><span class="larger-font">Regret-Based Pruning in Extensive-Form Games</span></i><br><b>
+Noam Brown*, Carnegie Mellon University; Tuomas Sandholm, Carnegie Mellon University</b><br><br><i><span class="larger-font">Fast Two-Sample Testing with Analytic Representations of Probability Measures</span></i><br><b>
+Kacper Chwialkowski*, University College London; Arthur Gretton, University Collage London; Dino Sejdinovic, University of Oxford; Aaditya Ramdas, Carnegie Mellon University</b><br><br><i><span class="larger-font">Learning to Segment Object Candidates</span></i><br><b>
+Pedro Pinheiro*, EPFL; Ronan Collobert, Facebook; Piotr Dollar, Facebook AI Research</b><br><br><i><span class="larger-font">GP Kernels for Cross-Spectrum Analysis</span></i><br><b>
+Kyle Ulrich*, Duke; David Carlson, ; Lawrence Carin, Duke University</b><br><br><i><span class="larger-font">Secure Multi-party Differential Privacy</span></i><br><b>
+Peter Kairouz, UIUC; Sewoong Oh*, UIUC; Pramod Viswanath, UIUC</b><br><br><i><span class="larger-font">Spatial Transformer Networks</span></i><br><b>
+Max Jaderberg*, Google; Karen Simonyan, Google DeepMind; Andrew Zisserman, Google; Koray Kavukcuoglu, Google DeepMind</b><br><br><i><span class="larger-font">Anytime Influence Bounds and the Explosive Behavior of Continuous-Time Diffusion Networks</span></i><br><b>
+Kevin Scaman*, ENS Cachan - CMLA; Rémi Lemonnier, ENS Cachan - CMLA; Nicolas Vayatis, ENS Cachan - CMLA</b><br><br><i><span class="larger-font">Multi-class SVMs: From Tighter Data-Dependent Generalization Bounds to Novel Algorithms</span></i><br><b>
+Yunwen Lei*, City University of Hong Kong; Urun Dogan, Microsoft; Alexander Binder, ; Marius Kloft, Humboldt University Berlin</b><br><br><i><span class="larger-font">High-dimensional neural spike train analysis with generalized count linear dynamical systems</span></i><br><b>
+Yuanjun Gao*, Columbia; Lars Busing, Columbia University; Krishna Shenoy, Stanford University; John Cunningham, University of Columbia</b><br><br><i><span class="larger-font">Learning with a Wasserstein Loss</span></i><br><b>
+Chiyuan Zhang*, MIT; Charlie Frogner, MIT; Hossein Mobahi, MIT; Mauricio Araya, Shell Intl. E&amp;P Inc.; Tomaso Poggio, MIT</b><br><br><i><span class="larger-font">b-bit Marginal Regression</span></i><br><b>
+Martin Slawski*, Rutgers University; Ping Li, Rugters University</b><br><br><i><span class="larger-font">Natural Neural Networks</span></i><br><b>
+Guillaume Desjardins*, Google DeepMind; Karen Simonyan, Google DeepMind; Razvan Pascanu, Google DeepMind; Koray Kavukcuoglu, Google DeepMind</b><br><br><i><span class="larger-font">Optimization Monte Carlo: Efficient and Embarrassingly Parallel Likelihood-Free Inference</span></i><br><b>
+Ted Meeds*, U. Amsterdam; Max Welling, University of Amsterdam</b><br><br><i><span class="larger-font">Adaptive Primal-Dual Splitting Methods for Statistical Learning and Image Processing</span></i><br><b>
+Tom Goldstein*, University of Maryland; Min Li, Southeast University; Xiaoming Yuan , Hong Kong Baptist University</b><br><br><i><span class="larger-font">On some provably correct cases of variational inference for topic models</span></i><br><b>
+Pranjal Awasthi*, Princeton; Andrej Risteski, Princeton</b><br><br><i><span class="larger-font">Collaborative Filtering with Graph Information: Consistency and Scalable Methods</span></i><br><b>
+Nikhil Rao*, University of Texas at Austin; Hsiang-Fu Yu, U Texas; Inderjit Dhillon, University of Texas at Austin; Pradeep Ravikumar, University of Texas at Austin</b><br><br><i><span class="larger-font">Combinatorial Bandits Revisited</span></i><br><b>
+Richard Combes, Supelec; Marc Lelarge, INRIA - ENS; Alexandre Proutiere, ; Mohammad Sadegh Talebi*, KTH Royal Inst. of Technology</b><br><br><i><span class="larger-font">Stochastic Variational Information Maximisation</span></i><br><b>
+Shakir Mohamed*, Google DeepMind; Danilo Rezende, Google DeepMind</b><br><br><i><span class="larger-font">A Structural Smoothing Framework For Robust Graph Comparison</span></i><br><b>
+Pinar Yanardag*, Purdue University; S.V.N. Vishwanathan, UCSC</b><br><br><i><span class="larger-font">Competitive Distribution Estimation: Why is Good-Turing Good</span></i><br><b>
+Alon Orlitsky, University of California, San Diego; Ananda Theertha Suresh*, UCSD</b><br><br><i><span class="larger-font">Efficient Learning by Directed Acyclic Graph For Resource Constrained Prediction</span></i><br><b>
+Joseph Wang*, ; Kirill Trapeznikov, STR; Venkatesh Saligrama, Boston University</b><br><br><i><span class="larger-font">A hybrid sampler for Poisson-Kingman mixture models</span></i><br><b>
+Maria Lomeli*, Gatsby; Stefano Favaro, University of Turin and Collegio Carlo Alberto; Yee Whye Teh, University of Oxford</b><br><br><i><span class="larger-font">An Active Learning Framework using Sparse-Graph Codes for Sparse Polynomials and Graph Sketching</span></i><br><b>
+Xiao Li*, UC Berkeley; Kannan Ramchandran, UC Berkeley</b><br><br><i><span class="larger-font">Local Smoothness in Variance Reduced Optimization</span></i><br><b>
+Daniel Vainsencher*, Princeton University; Han Liu, Princeton University; Tong Zhang, Rutgers</b><br><br><i><span class="larger-font">Saliency, Scale and Information: Towards a Unifying Theory</span></i><br><b>
+Shafin Rahman, University of Manitoba; Neil Bruce*, University of Manitoba</b><br><br><i><span class="larger-font">Fighting Bandits with a New Kind of Smoothness</span></i><br><b>
+Jacob Abernethy, University of Michigan; Chansoo Lee*, University of Michigan Ann Arb; Ambuj Tewari, University of Michigan</b><br><br><i><span class="larger-font">Beyond Sub-Gaussian Measurements: High-Dimensional Structured Estimation with Sub-Exponential Designs</span></i><br><b>
+VIDYASHANKAR SIVAKUMAR*, UNIVERSITY OF MINNESOTA, TC; Arindam Banerjee, University of Minnesota; Pradeep Ravikumar, University of Texas at Austin</b><br><br><i><span class="larger-font">Spectral Norm Regularization of Orthonormal Representations for Graph Transduction</span></i><br><b>
+RAKESH SHIVANNA*, Google Inc.; Bibaswan Chatterjee, Indian Institute of Science; Raman Sankaran, Indian Institute of Science; Chiranjib Bhattacharyya, Indian Institute of Science; Francis Bach, INRIA - ENS</b><br><br><i><span class="larger-font">Neural Molecular Fingerprints</span></i><br><b>
+David Duvenaud*, Harvard; Dougal Maclaurin, Harvard University; Jorge Aguilera Iparraguirre, Harvard University; Rafael Gómez Bombarell, Harvard University; Timothy Hirzel, Harvard University; Alan Aspuru-Guzik, Harvard University; Ryan Adams, Harvard</b><br><br><i><span class="larger-font">Mixed Robust/Average Submodular Partitioning: Fast Algorithms, Guarantees, and Applications</span></i><br><b>
+Kai Wei*, ; Rishabh Iyer, "University of Washington, Seattle"; Shengjie Wang, University of Washington; Wenruo Bai, University of Washington; Jeff Bilmes, "University of Washington, Seattle"</b><br><br><i><span class="larger-font">Tractable Learning for Complex Probability Queries</span></i><br><b>
+Jessa Bekker*, KU Leuven; Guy Van den Broeck, ; Arthur Choi, ; Adnan  Darwiche, UCLA; Jesse Davis, Katholieke Universiteit Leuven</b><br><br><i><span class="larger-font">StopWasting My Gradients: Practical SVRG</span></i><br><b>
+Reza Babanezhad Harikandeh*, UBC; Mohamed Osama  Ahmed, ; Alim Virani, ; Mark Schmidt, University of British Columbia; Jakub Konečný, </b><br><br><i><span class="larger-font">Mind the Gap: A Generative Approach to Interpretable Feature  Selection and Extraction</span></i><br><b>
+Been Kim, MIT; Julie Shah, MIT; Finale Doshi-Velez*, Harvard</b><br><br><i><span class="larger-font">A Normative Theory of Adaptive Dimensionality Reduction in Neural Networks</span></i><br><b>
+Cengiz Pehlevan*, Simons Center for Data Analysi; Dmitri Chklovskii, Simons Foundation</b><br><br><i><span class="larger-font">On the Convergence of Stochastic Gradient MCMC Algorithms with High-Order Integrators</span></i><br><b>
+Changyou Chen*, Duke University; Nan Ding, Google; Lawrence Carin, Duke University</b><br><br><i><span class="larger-font">Sparsistent Estimation of Nonparametric Graphical Models</span></i><br><b>
+Siqi Sun*, Ttic; Mladen Kolar, University of Chicago; Jinbo  Xu, Technological Institute at Chicago</b><br><br><i><span class="larger-font">Are You Talking to a Machine? Dataset and Methods for Multilingual Image Question</span></i><br><b>
+Haoyuan Gao, Baidu; Junhua Mao, UCLA; Jie Zhou, Baidu; Zhiheng Huang, Baidu; Lei Wang, Baidu; Wei Xu*, Baidu</b><br><br><i><span class="larger-font">Neighborhood Watch: Stochastic Gradient Descent with Neighbors</span></i><br><b>
+Thomas Hofmann*, ETH Zurich; Aurelien Lucchi, ETH Zurich; Brian McWilliams, ETH Zurich</b><br><br><i><span class="larger-font">Sample Efficient Path Integral Control under Uncertainty</span></i><br><b>
+Yunpeng Pan*, Georgia Institute of Technolog; Evangelos Theodorou, Georgia Tech</b><br><br><i><span class="larger-font">Stochastic Expectation Propagation</span></i><br><b>
+Yingzhen Li*, University of Cambridge; Jose Miguel Hernandez-Lobato, Harvard; Richard Turner, neuroscience</b><br><br><i><span class="larger-font">Approximate MAP Inference in Continuous MRFs</span></i><br><b>
+Nicholas Ruozzi*, UTDallas</b><br><br><i><span class="larger-font">Scale Up Nonlinear Component Analysis with Doubly Stochastic Gradients</span></i><br><b>
+Bo Xie*, Georgia Tech; Yingyu Liang, Princeton University; Le Song, Georgia Institute of Technology</b><br><br><i><span class="larger-font">Generalization in Adaptive Data Analysis and Holdout Reuse</span></i><br><b>
+Cynthia Dwork, Microsoft Research; Vitaly Feldman*, ; Moritz Hardt, Google; Toniann Pitassi, University of Toronto; Omer Reingold, Samsung Research; Aaron Roth, University of Pennsylvania</b><br><br><i><span class="larger-font">Market Scoring Rules Act As Opinion Pools For Risk-Averse Agents</span></i><br><b>
+Mithun Chakraborty*, Washington Univ. in St. Louis; Sanmay Das, Washington University in St. Louis</b><br><br><i><span class="larger-font">Sparse Linear Programming via Primal and Dual Augmented Coordinate Descent</span></i><br><b>
+Ian En-Hsu Yen*, University of Texas at Austin; Kai Zhong, UT Austin; Cho-Jui Hsieh, UTexas-Austin; Pradeep Ravikumar, University of Texas at Austin; Inderjit Dhillon, University of Texas at Austin</b><br><br><i><span class="larger-font">Training Very Deep Networks</span></i><br><b>
+Rupesh Srivastava*, IDSIA; Klaus Greff, IDSIA; J?rgen Schmidhuber, </b><br><br><i><span class="larger-font">Bayesian Active Model Selection with an Application to Automated Audiometry</span></i><br><b>
+Jacob Gardner, Cornell University; Gustavo Malkomes, Washington University in St. Louis; Roman Garnett*, Washington University in STL; Kilian Weinberger, Cornell University; Dennis Barbour, Washington University in St. Louis; John Cunningham, University of Columbia</b><br><br><i><span class="larger-font">A Linear-Time Particle Gibbs Sampler for Infinite Hidden Markov Models</span></i><br><b>
+Nilesh Tripuraneni*, Cambridge University; Shixiang Gu, ; Hong Ge, University of Cambridge; Zoubin Ghahramani, University of Cambridge</b><br><br><i><span class="larger-font">Learning spatiotemporal trajectories from manifold-valued longitudinal data</span></i><br><b>
+Jean-Baptiste SCHIRATTI*, Ecole Polytechnique; Stéphanie ALLASSONNIERE, Ecole Polytechnique; Olivier COLLIOT, Université Pierre et Marie Curie (UPMC); Stanley DURRLEMAN, INRIA</b><br><br><i><span class="larger-font">A Bayesian Framework for Modeling Confidence in Perceptual Decision Making</span></i><br><b>
+Koosha Khalvati*, University of Washington; Rajesh Rao, University of Washington</b><br><br><i><span class="larger-font">Path-SGD: Path-Normalized Optimization in Deep Neural Networks</span></i><br><b>
+Behnam Neyshabur*, TTI Chicago; Ruslan Salakhutdinov, University of Toronto; Nati Srebro, Toyota Technological Institute at Chicago</b><br><br><i><span class="larger-font">On the consistency theory of high dimensional variable screening</span></i><br><b>
+Xiangyu Wang*, Duke University; Chenlei Leng, ; David Dunson, Duke University</b><br><br><i><span class="larger-font">End-To-End Memory Networks</span></i><br><b>
+Sainbayar Sukhbaatar*, New York University; Arthur Szlam, Facebook; Jason Weston, Facebook AI Research; Rob Fergus, Facebook AI Research</b><br><br><i><span class="larger-font">Spectral Representations for Convolutional Neural Networks</span></i><br><b>
+Oren Rippel*, MIT; Jasper Snoek, Harvard; Ryan Adams, Harvard</b><br><br><i><span class="larger-font">Online Gradient Boosting</span></i><br><b>
+Alina Beygelzimer, Yahoo!; Elad Hazan, Princeton University; Satyen Kale*, Yahoo Labs; Haipeng Luo, Princeton University</b><br><br><i><span class="larger-font">Deep Temporal Sigmoid Belief Networks for Sequence Modeling</span></i><br><b>
+Zhe Gan*, Duke University; Chunyuan Li, Duke University; Ricardo Henao, Duke University; David Carlson, ; Lawrence Carin, Duke University</b><br><br><i><span class="larger-font">Recognizing retinal ganglion cells in the dark</span></i><br><b>
+Emile Richard*, Institut Curie; Georges Goetz, Stanford University; EJ Chichilnisky, Stanford</b><br><br><i><span class="larger-font">A Theory of Decision Making Under Dynamic Context</span></i><br><b>
+Michael Shvartsman*, Princeton Neuroscience Inst.; Vaibhav Srivastava, Princeton Neuroscience Institute; Jonathan Cohen, Princeton University</b><br><br><i><span class="larger-font">A Gaussian Process Model of Quasar Spectral Energy Distributions</span></i><br><b>
+Andrew Miller*, Harvard; Albert Wu, Harvard; Ryan Adams, Harvard</b><br><br><i><span class="larger-font">Hidden Technical Debt in Machine Learning Systems</span></i><br><b>
+D Sculley*, Google Research; Gary Holt, ; Daniel Golovin, Google, Inc.; Eugene Davydov, Google, Inc.; Todd Phillips, Google, Inc.; Dietmar Ebner, ; Vinay Chaudhary, Google, Inc.; Michael Young, Google, Inc.; Jean-Francois Crespo, Google, Inc.; Dan Dennison, Google, Inc.</b><br><br><i><span class="larger-font">Local Causal Discovery</span></i><br><b>
+Tian Gao*, RPI; Qiang Ji, </b><br><br><i><span class="larger-font">High Dimensional EM Algorithm: Statistical Optimization and Asymptotic Normality</span></i><br><b>
+Zhaoran Wang*, Princeton University; Quanquan Gu, University of Virginia; Yang Ning, Princeton University; Han Liu, Princeton University</b><br><br><i><span class="larger-font">Revenue Optimization against Strategic Buyers</span></i><br><b>
+Andres Munoz Medina*, Courant Institute of Mathematical Sciences; Mehryar Mohri, Courant Institute and Google</b><br><br><i><span class="larger-font">Deep Convolutional Inverse Graphics Network</span></i><br><b>
+Pushmeet Kohli, Microsoft Research; Will Whitney, MIT; Tejas Kulkarni*, MIT; Josh Tenenbaum, MIT</b><br><br><i><span class="larger-font">Sparse and Low-Rank Tensor Decomposition</span></i><br><b>
+Parikshit Shah*, Yahoo Labs; Nikhil Rao, University of Texas at Austin; Gongguo Tang, Coloradoschoolofmines</b><br><br><i><span class="larger-font">Minimax Time Series Prediction</span></i><br><b>
+Wouter Koolen*, Queensland University of Technology; Alan Malek, UC Berkeley; Peter Bartlett, UC Berkeley; Yasin Abbasi-Yadkori, Queensland University of Technology</b><br><br><i><span class="larger-font">Differentially Private Learning of Structured Discrete Distributions</span></i><br><b>
+Ilias Diakonikolas, University of Edinburgh; Moritz Hardt, Google; Ludwig Schmidt*, </b><br><br><i><span class="larger-font">Variational Dropout and the Local Reparameterization Trick</span></i><br><b>
+Diederik Kingma*, U. Amsterdam; Tim Saliman, Algorithmica; Max Welling, University of Amsterdam</b><br><br><i><span class="larger-font">Sample Complexity of Learning Mahalanobis Distance Metrics</span></i><br><b>
+Nakul Verma*, Janelia Research Campus HHMI; Kristin Branson, Janelia Research Campus, HHMI</b><br><br><i><span class="larger-font">Learning Wake-Sleep Recurrent Attention Models</span></i><br><b>
+Jimmy Ba*, University of Toronto; Ruslan Salakhutdinov, University of Toronto; Roger Grosse, University of Toronto; Brendan Frey, U. Toronto</b><br><br><i><span class="larger-font">Robust Gaussian Graphical Modeling with the Trimmed Graphical Lasso</span></i><br><b>
+Eunho Yang*, IBM Thomas J. Watson Research Center; Aurelie  Lozano, IBM Research</b><br><br><i><span class="larger-font">Testing Closeness With Unequal Sized Samples</span></i><br><b>
+Bhaswar Bhattacharya*, Stanford University; Greg Valiant, Stanford University</b><br><br><i><span class="larger-font">Estimating Jaccard Index with Missing Observations: A Matrix Calibration Approach</span></i><br><b>
+Wenye Li*, Macao Polytechnic Institute</b><br><br><i><span class="larger-font">Neural Adaptive Sequential Monte Carlo</span></i><br><b>
+Shixiang Gu*, ; Richard Turner, neuroscience; Zoubin Ghahramani, University of Cambridge</b><br><br><i><span class="larger-font">Local Expectation Gradients for Doubly Stochastic Variational Inference</span></i><br><b>
+Michalis Titsias, Athens University of Economics and Business; Miguel Lázaro Gredilla*, Vicarious</b><br><br><i><span class="larger-font">On Variance Reduction in Stochastic Gradient Descent and its Asynchronous Variants</span></i><br><b>
+Sashank J Reddi*, Carnegie Mellon University; Ahmed Hefny, Carnegie Mellon University; Suvrit Sra, MIT; Barnabas Poczos, Carnegie Mellon University; Alex Smola, Carnegie Mellon University</b><br><br><i><span class="larger-font">NEXT: A System for Real-World Development, Evaluation, and Application of Active Learning</span></i><br><b>
+Kevin Jamieson*, University of Wisconsin; Lalit Jain, University of Wisconsin; Chris Fernandez, University of Wisconsin; Nicholas Glattard, University of Wisconsin; Rob Nowak, Wisconsin</b><br><br><i><span class="larger-font">Super-Resolution Off the Grid</span></i><br><b>
+Qingqing Huang, MIT; Sham Kakade*, University of Washington</b><br><br><i><span class="larger-font">Taming the Wild: A Unified Analysis of Hogwild-Style Algorithms</span></i><br><b>
+Christopher De Sa*, Stanford; Ce Zhang, Wisconsin; Kunle Olukotun, Stanford; Christopher Ré, Stanford</b><br><br><i><span class="larger-font">The Return of the Gating Network:  combining generative models and discriminative training in natural image priors.</span></i><br><b>
+Dan Rosenbaum*, The Hebrew University; Yair Weiss, Hebrew University</b><br><br><i><span class="larger-font">Pointer Networks</span></i><br><b>
+Oriol Vinyals*, Google; Meire Fortunato, ; Navdeep Jaitly, Google</b><br><br><i><span class="larger-font">Associative Memory via a Sparse Recovery Model</span></i><br><b>
+Ankit Singh Rawat*, University of Texas at Austin; Arya Mazumdar, University of Minnesota -- Twin Cities</b><br><br><i><span class="larger-font">Robust Spectral Inference for Joint Stochastic Matrix Factorization</span></i><br><b>
+Moontae Lee*, Cornell University; David Mimno, Cornell University; David Bindel, Cornell University</b><br><br><i><span class="larger-font">Fast, Provable Algorithms for Isotonic Regression in all l_p-norms</span></i><br><b>
+Sushant Sachdeva*, Yale University; Anup Rao, Yale University; Rasmus Kyng, Yale University</b><br><br><i><span class="larger-font">Structured Prediction Games for Multivariate Losses</span></i><br><b>
+Hong Wang*, University of Illinois at Chic; Wei Xing, University of Illinois at Chicago; Kaiser Asif, University of Illinois at Chicago; Brian Ziebart, University of Illinois at Chic</b><br><br><i><span class="larger-font">Asynchronous Parallel Stochastic Gradient for Nonconvex Optimization</span></i><br><b>
+Xiangru Lian, University of Rochester; Ji Liu*, University of Rochester; Yijun Huang, University of Rochester; Yuncheng Li, University of Rochester</b><br><br><i><span class="larger-font">Embed to Control: A Locally Linear Latent Dynamics Model for Control from Raw Images</span></i><br><b>
+Manuel Watter, University of Freiburg; Jost Springenberg*, University of Freiburg; Joschka Boedecker, University of Freiburg; Martin Riedmiller, University of Freiburg</b><br><br><i><span class="larger-font">Efficient and Parsimonious Agnostic Active Learning</span></i><br><b>
+Tzu-Kuo Huang*, Microsoft; Alekh Agarwal, Microsoft Research; Daniel Hsu, Columbia University; John Langford, Microsoft Research New York; Robert Schapire, MIcrosoft Research</b><br><br><i><span class="larger-font">Softstar: Softened Heuristic-based Inference</span></i><br><b>
+Mathew Monfort*, ; Josh Tenenbaum, MIT; Brian Ziebart, University of Illinois at Chic; Patrick Lucey, Disney Research Pittsburgh; Brenden Lake, MIT</b><br><br><i><span class="larger-font">Grammar as a Foreign Language</span></i><br><b>
+Oriol Vinyals*, Google; Lukasz Kaiser, Google; Terry Koo, Google; Slav Petrov, Google; Ilya Sutskever, Google; Geoffrey Hinton, Google</b><br><br><i><span class="larger-font">Regularization-Free Estimation in Trace Regression with Symmetric Positive Semidefinite Matrices</span></i><br><b>
+Martin Slawski*, Rutgers University; Ping Li, Rugters University; Matthias Hein, Saarland University</b><br><br><i><span class="larger-font">Winner-Take-All Autoencoders</span></i><br><b>
+Alireza Makhzani*, University of Toronto; Brendan Frey, U. Toronto</b><br><br><i><span class="larger-font">Deep Poisson Factor Modeling</span></i><br><b>
+Ricardo Henao*, Duke University; Zhe Gan, Duke University; James Lu, Duke University; Lawrence Carin, Duke University</b><br><br><i><span class="larger-font">Bayesian Optimization with Exponential Convergence</span></i><br><b>
+Kenji Kawaguchi*, MIT; Leslie Kaelbling, MIT; Tomás Lozano-Pérez, </b><br><br><i><span class="larger-font">Sample Complexity of Episodic Fixed-Horizon Reinforcement Learning</span></i><br><b>
+Christoph Dann*, CMU; Emma Brunskill, CMU</b><br><br><i><span class="larger-font">Learning with Relaxed Supervision</span></i><br><b>
+Jacob Steinhardt*, Stanford University; Percy Liang, Stanford University</b><br><br><i><span class="larger-font">Subsampled Power Iteration: a Unified Algorithm for Block Models and Planted CSP's</span></i><br><b>
+Vitaly Feldman, ; Will Perkins*, University of Birmingham; Santosh Vempala, Georgia Tech</b><br><br><i><span class="larger-font">Accelerated Mirror Descent in Continuous and Discrete Time</span></i><br><b>
+Walid Krichene*, UC Berkeley; Alexandre Bayen, UC Berkeley; Peter Bartlett, UC Berkeley</b><br><br><i><span class="larger-font">The Human Kernel</span></i><br><b>
+Andrew Wilson*, Carnegie Mellon University; Christoph Dann, CMU; Chris Lucas, University of Edinburgh; Eric Xing, Carnegie Mellon University</b><br><br><i><span class="larger-font">Action-Conditional Video Prediction using Deep Networks in Atari Games</span></i><br><b>
+Junhyuk Oh*, University of Michigan; Xiaoxiao Guo, Uni; Honglak Lee, U. Michigan; Satinder Singh, University of Michigan; Richard Lewis, University of Michigan</b><br><br><i><span class="larger-font">A Pseudo-Euclidean Iteration for Optimal Recovery in Noisy ICA</span></i><br><b>
+James Voss, ; Mikhail Belkin, Ohio State University; Luis Rademacher*, The Ohio State University</b><br><br><i><span class="larger-font">Distributed Submodular Cover: Succinctly Summarizing Massive Data</span></i><br><b>
+Baharan Mirzasoleiman*, ETHZ; Amin Karbasi, Yale; Ashwinkumar Badanidiyuru, Google; Andreas Krause, ETHZ</b><br><br><i><span class="larger-font">Community Detection via Measure Space Embedding</span></i><br><b>
+Mark Kozdoba*, Technion; Shie Mannor, Technion</b><br><br><i><span class="larger-font">Basis refinement strategies for linear value function approximation in MDPs</span></i><br><b>
+Gheorghe Comanici*, McGill University, Montreal; Doina Precup, University of McGill; Prakash Panangaden, McGill University, Montreal</b><br><br><i><span class="larger-font">Structured Estimation with Atomic Norms: General Bounds and Applications</span></i><br><b>
+Sheng Chen*, University of Minnesota; Arindam Banerjee, University of Minnesota</b><br><br><i><span class="larger-font">A Complete Recipe for Stochastic Gradient MCMC</span></i><br><b>
+Yi-An Ma*, University of Washington; Tianqi Chen, University of Washington; Emily Fox, Washington</b><br><br><i><span class="larger-font">Bandit Smooth Convex Optimization: Improving the Bias-Variance Tradeoff</span></i><br><b>
+Ofer Dekel*, Microsoft Research; Tomer Koren, Technion</b><br><br><i><span class="larger-font">Online Prediction at the Limit of Zero Temperature</span></i><br><b>
+Mark Herbster*, University College London; Stephen Pasteris, UCL; Shaona Ghosh, University of Southhampton</b><br><br><i><span class="larger-font">Learning Continuous Control Policies by Stochastic Value Gradients</span></i><br><b>
+Nicolas Heess, Google DeepMind; Greg Wayne*, Google DeepMind; David Silver, DeepMind; Timothy Lillicrap, Google DeepMind; Tom Erez, Google DeepMind; Yuval Tassa, Google DeepMind</b><br><br><i><span class="larger-font">Exploring Models and Data for Image Question Answering</span></i><br><b>
+Mengye Ren*, University of Toronto; Ryan Kiros, U. Toronto; Richard Zemel, University of Toronto</b><br><br><i><span class="larger-font">Efficient and Robust Automated Machine Learning</span></i><br><b>
+Matthias Feurer, University of Freiburg; Aaron Klein*, University of Freiburg; Katharina Eggensperger, University of Freiburg; Jost Springenberg, University of Freiburg; Manuel Blum, University of Freiburg; Frank Hutter, U Freiburg</b><br><br><i><span class="larger-font">Preconditioned Spectral Descent for Deep Learning</span></i><br><b>
+David Carlson*, ; Edo Collins, ; Ya-Ping Hsieh, EPFL; Lawrence Carin, Duke University; Volkan Cevher, EPFL</b><br><br><i><span class="larger-font">A Recurrent Latent Variable Model for Sequential Data</span></i><br><b>
+Junyoung Chung*, University of Montreal; Kyle Kastner, Universite de Montreal; Viet Hanh Laurent Dinh, University of Montreal; Kratarth Goel, University of Montreal; Aaron Courville, U. Montreal; Yoshua Bengio, U. Montreal</b><br><br><i><span class="larger-font">Fast Convergence of Regularized Learning in Games</span></i><br><b>
+Vasilis Syrgkanis, Microsoft Research; Alekh Agarwal*, Microsoft Research; Haipeng Luo, Princeton University; Robert Schapire, MIcrosoft Research</b><br><br><i><span class="larger-font">Parallel Multi-Dimensional LSTM, With Application to Fast Biomedical Volumetric Image Segmentation</span></i><br><b>
+Marijn Stollenga*, IDSIA; Wonmin Byeon, </b><span><strong>IDSIA</strong></span><b>  Marcus Liwicki, TU Kaiserslautern; J?rgen Schmidhuber, </b><br><br><i><span class="larger-font">Reflection, Refraction, and Hamiltonian Monte Carlo</span></i><br><b>
+Hadi Mohasel Afshar*, Australian National University; Justin Domke, NICTA</b><br><br><i><span class="larger-font">The Consistency of Common Neighbors for Link Prediction in Stochastic Blockmodels</span></i><br><b>
+Purnamrita Sarkar*, UT Austin; Deepayan Chakrabarti, UT Austin; Peter Bickel, U C Berkeley</b><br><br><i><span class="larger-font">Nearly Optimal Private LASSO</span></i><br><b>
+Kunal Talwar*, Google; Li Zhang, Google; Abhradeep Thakurta, </b><br><br><i><span class="larger-font">Convergence Analysis of Prediction Markets via Randomized Subspace Descent</span></i><br><b>
+Rafael Frongillo*, Harvard University; Mark Reid, Australia National University</b><br><br><i><span class="larger-font">The Poisson Gamma Belief Network</span></i><br><b>
+Mingyuan Zhou*, University of Texas at Austin; Yulai Cong, ; Bo Chen, Xidian University</b><br><br><i><span class="larger-font">Convergence rates of sub-sampled Newton methods</span></i><br><b>
+Murat Erdogdu*, Stanford University; Andrea Montanari, Stanford</b><br><br><i><span class="larger-font">No-Regret Learning in Repeated Bayesian Games</span></i><br><b>
+Jason Hartline, Northwestern University; Vasilis Syrgkanis*, Microsoft Research; Eva Tardos, Cornell University</b><br><br><i><span class="larger-font">Statistical Topological Data Analysis - A Kernel Perspective</span></i><br><b>
+Roland Kwitt*, University of Salzburg; Ulrich Bauer, TU Munich; Stefan Huber, IST Austria; Marc Niethammer, UNC Chapel Hill; Weili Lin, UNC Chapel Hill</b><br><br><i><span class="larger-font">Unsupervised Sequence Learning</span></i><br><b>
+Andrew Dai*, Google Inc; Quoc Le, Google</b><br><br><i><span class="larger-font">Structured Transforms for Small-Footprint Deep Learning</span></i><br><b>
+Vikas Sindhwani*, Google; Tara Sainath, Google; Sanjiv Kumar, Google</b><br><br><i><span class="larger-font">Rapidly Mixing Gibbs Sampling for a Class of Factor Graphs Using Hierarchy Width</span></i><br><b>
+Christopher De Sa*, Stanford; Ce Zhang, Wisconsin; Kunle Olukotun, Stanford; Christopher Ré, Stanford</b><br><br><i><span class="larger-font">Interpolating Convex and Non-Convex Tensor Decompositions via the Subspace Norm</span></i><br><b>
+Qinqing Zheng, University of Chicago; Ryota Tomioka*, Toyota Technological Institute at Chicago</b><br><br><i><span class="larger-font">Sample Complexity Bounds for Iterative Stochastic Policy Optimization</span></i><br><b>
+Marin Kobilarov*, Johns Hopkins University</b><br><br><i><span class="larger-font">BinaryConnect: Training Deep Neural Networks with binary weights during propagations</span></i><br><b>
+Matthieu Courbariaux*, École Polytechnique Montréal; Yoshua Bengio, U. Montreal; Jean-Pierre David, Polytechnique Montréal</b><br><br><i><span class="larger-font">Interactive Control of Diverse Complex Characters with Neural Networks</span></i><br><b>
+Igor Mordatch*, University of Washington; Kendall Lowrey, University of Washington; Galen Andrew, """University of Washington, Seattle"""; Zoran Popović, University of Washington; Emanuel Todorov, University of Washington</b><br><br><i><span class="larger-font">Submodular Hamming Metrics</span></i><br><b>
+Jennifer Gillenwater*, University of Pennsylvania; Rishabh Iyer, "University of Washington, Seattle"; Bethany Lusch, University of Washington; Rahul Kidambi, University of Washington; Jeff Bilmes, "University of Washington, Seattle"</b><br><br><i><span class="larger-font">A universal primal-dual convex optimization framework</span></i><br><b>
+Alp Yurtsever, LIONS, EPFL, Lausanne; Quoc Tran Dinh*, LIONS, EPFL, Lausanne; Volkan Cevher, EPFL</b><br><br><i><span class="larger-font">Learning-curve analysis of simple decision heuristics</span></i><br><b>
+Ozgur Simsek*, Max Plank Institute Berlin; Marcus Buckmann, Max Planck Institute</b><br><br><i><span class="larger-font">Explore no more: improved high-probability regret bounds for non-stochastic bandits</span></i><br><b>
+Gergely Neu*, INRIA</b><br><br><i><span class="larger-font">Fast and Memory Optimal Low-Rank Matrix Approximation</span></i><br><b>
+Seyoung Yun*, MSR-INRIA; Marc Lelarge, INRIA - ENS; Alexandre Proutiere, </b><br><br><i><span class="larger-font">Learnability of Influence in Networks</span></i><br><b>
+Harikrishna Narasimhan*, Indian Institute of Science; David Parkes, Harvard University ; Yaron Singer, Harvard University</b><br><br><i><span class="larger-font">Learning Causal Graphs with Small Interventions</span></i><br><b>
+Karthikeyan Shanmugam, UT Austin; Murat Kocaoglu*, UT Austin; Alex Dimakis, Utaustin</b><br><br><i><span class="larger-font">Information-theoretic lower bounds for convex optimization with erroneous oracles</span></i><br><b>
+Yaron Singer*, Harvard University; Jan Vondrak, IBM Research</b><br><br><i><span class="larger-font">Fixed-Length Poisson MRF: Adding Dependencies to the Multinomial</span></i><br><b>
+David Inouye*, University of Texas at Austin; Pradeep Ravikumar, University of Texas at Austin; Inderjit Dhillon, University of Texas at Austin</b><br><br><i><span class="larger-font">Large-Scale Bayesian Multi-Label Learning via Positive Labels Only</span></i><br><b>
+Piyush Rai*, Duke University; Changwei Hu, ; Ricardo Henao, Duke University; Lawrence Carin, Duke University</b><br><br><i><span class="larger-font">The Self-Normalized Estimator for Counterfactual Learning</span></i><br><b>
+Adith Swaminathan*, Cornell University; Thorsten Joachims, Cornell</b><br><br><i><span class="larger-font">Fast Lifted MAP Inference via Partitioning</span></i><br><b>
+Somdeb Sarkhel*, University of Texas at Dallas; Parag Singla, Indian Institute of Technology; Vibhav Gogate, UT Dallas</b><br><br><i><span class="larger-font">Data Generation as Sequential Decision Making</span></i><br><b>
+Philip Bachman*, McGill University; Doina Precup, University of McGill</b><br><br><i><span class="larger-font">On Elicitation Complexity and Conditional Elicitation</span></i><br><b>
+Rafael Frongillo*, Harvard University; Ian Kash, Microsoft</b><br><br><i><span class="larger-font">Decomposition Bounds for Marginal MAP</span></i><br><b>
+Wei Ping*, UC Irvine; Qiang Liu, MIT; alexander ihler, UC irvine</b><br><br><i><span class="larger-font">Inference and Feature Selection via Maximal Correlation</span></i><br><b>
+Meisam Razaviyayn*, Stanford University; Farzan Farnia, ; David Tse, </b><br><br><i><span class="larger-font">A class of network models recoverable by spectral clustering</span></i><br><b>
+Yali Wan*, University of Washington; Marina Meila, University of Washington</b><br><br><i><span class="larger-font">Skip-Thought Vectors</span></i><br><b>
+Ryan Kiros*, U. Toronto; Yukun Zhu, University of Toronto; Ruslan Salakhutdinov, University of Toronto; Richard Zemel, University of Toronto; Raquel Urtasun, University of Toronto; Antonio Torralba, MIT; Sanja Fidler, University of Toronto</b><br><br><i><span class="larger-font">Rate-Agnostic (Causal) Structure Learning</span></i><br><b>
+Sergey Plis*, The Mind Research Network; David Danks, Carnegie Mellon University; Cynthia Freeman, The Mind Research Network; Vince Calhoun, MRN</b><br><br><i><span class="larger-font">Principal Geodesic Analysis for Probability Measures under the Optimal Transport Metric</span></i><br><b>
+Vivien Seguy*, Kyoto University; Marco Cuturi, Kyoto University</b><br><br><i><span class="larger-font">Consistent Multilabel Classification</span></i><br><b>
+Sanmi Koyejo*, Stanford University; Nagarajan Natarajan, UT Austin; Pradeep Ravikumar, University of Texas at Austin; Inderjit Dhillon, University of Texas at Austin</b><br><br><i><span class="larger-font">Parallel Predictive Entropy Search for Batch Global Optimization of Expensive Objective Functions</span></i><br><b>
+Amar Shah*, Cambridge; Zoubin Ghahramani, University of Cambridge</b><br><br><i><span class="larger-font">Cornering Stationary and Restless Mixing Bandits with Remix-UCB</span></i><br><b>
+Julien Audiffren*, CMLA, ENS Cachan; Liva Ralaivola, Univesity of Marseille</b><br><br><i><span class="larger-font">Semi-Supervised Factored Logistic Regression for High-Dimensional Neuroimaging Data</span></i><br><b>
+Danilo Bzdok*, INRIA; Michael Eickenberg, ; Olivier Grisel, ; Bertrand Thirion, INRIA; Gael Varoquaux, Parietal Team, INRIA</b><br><br><i><span class="larger-font">Gaussian Process Random Fields</span></i><br><b>
+David Moore*, UC Berkeley; Stuart Russell, UC Berkeley</b><br><br><i><span class="larger-font">M-Statistic for Kernel Change-Point Detection</span></i><br><b>
+Shuang Li, Georgia Institute of Technology; Yao Xie*, Georgia Tech; Hanjun Dai, Georgia Tech; Le Song, Georgia Institute of Technology</b><br><br><i><span class="larger-font">Adaptive Online Learning</span></i><br><b>
+Dylan Foster*, Cornell University; Alexander Rakhlin, UPenn; Karthik Sridharan, Cornell</b><br><br><i><span class="larger-font">A Universal Catalyst for First-Order Optimization</span></i><br><b>
+Hongzhou Lin, Inria; Julien Mairal*, INRIA; Zaid Harchaoui, Inria</b><br><br><i><span class="larger-font">Inference for determinantal point processes without spectral knowledge</span></i><br><b>
+Michalis Titsias, Athens University of Economics and Business; Remi Bardenet*, University of Lille</b><br><br><i><span class="larger-font">Kullback-Leibler Proximal Variational Inference</span></i><br><b>
+Mohammad Emtiyaz Khan*, EPFL</b><br><br><i><span class="larger-font">Semi-proximal Mirror-Prox for Nonsmooth Composite Minimization</span></i><br><b>
+Niao He, Georgiatech; Zaid Harchaoui*, Inria</b><br><br><i><span class="larger-font">LASSO with Non-linear Measurements is Equivalent to One With Linear Measurements</span></i><br><b>
+Christos Thrampoulidis*, Caltech; Ehsan Abbasi, Caltech; Babak Hassibi, Caltech</b><br><br><i><span class="larger-font">From random walks to distances on unweighted graphs</span></i><br><b>
+Tatsunori Hashimoto*, MIT CSAIL; Yi Sun, MIT Mathematics; Tommi Jaakkola, MIT</b><br><br><i><span class="larger-font">Bayesian dark knowledge</span></i><br><b>
+Anoop Korattikara*, Google; Vivek Rathod, Google; Kevin Murphy, Google; Max Welling, </b><br><br><i><span class="larger-font">Matrix Completion with Noisy Side Information</span></i><br><b>
+Kai-Yang Chiang*, UT Austin; Cho-Jui Hsieh, UTexas-Austin; Inderjit Dhillon, University of Texas at Austin</b><br><br><i><span class="larger-font">Dependent Multinomial Models Made Easy: Stick-Breaking with the Polya-gamma Augmentation</span></i><br><b>
+Scott Linderman*, Harvard Unviersity; Matthew Johnson, MIT; Ryan Adams, Harvard</b><br><br><i><span class="larger-font">On-the-Job Learning with Bayesian Decision Theory</span></i><br><b>
+Keenon Werling*, Stanford University; Arun Chaganty, Stanford; percy Liang, Stanford University</b><br><br><i><span class="larger-font">Calibrated Structured Prediction</span></i><br><b>
+Volodymyr Kuleshov*, Stanford University; percy Liang, Stanford University</b><br><br><i><span class="larger-font">Learning Structured Output Representation using Deep Conditional Generative Models</span></i><br><b>
+Kihyuk Sohn*, University of Michigan; Honglak Lee, U. Michigan; Xinchen Yan, UMich</b><br><br><i><span class="larger-font">Time-Sensitive Recommendation From Recurrent User Activities</span></i><br><b>
+Nan Du*, ; yichen wang, ; Le Song, Georgia Institute of Technology</b><br><br><i><span class="larger-font">Learning Stationary Time Series using Gaussian Processes with Nonparametric Kernels</span></i><br><b>
+Felipe Tobar*, University of Cambridge; Thang Bui, University of Cambridge; Richard Turner, neuroscience</b><br><br><i><span class="larger-font">Eliciting and Aggregating Private Information</span></i><br><b>
+Jacob Abernethy, University of Michigan; Rafael Frongillo, Harvard University; Bo Waggoner*, Harvard</b><br><br><i><span class="larger-font">Lifted Inference Rules With Constraints</span></i><br><b>
+Happy Mittal*, IIT Delhi; Anuj Mahajan, ; Vibhav Gogate, UT Dallas; Parag Singla, Indian Institute of Technology</b><br><br><i><span class="larger-font">Gradient Estimation Using Stochastic Computation Graphs</span></i><br><b>
+John Schulman*, UC Berkeley / Google; Nicolas Heess, Google DeepMind; Theophane Weber, Google DeepMind; Pieter Abbeel, UC Berkeley</b><br><br><i><span class="larger-font">Model-Based Relative Entropy Stochastic Search</span></i><br><b>
+Abbas Abdolmaleki*, University of aveiro; Jan Peters, TU Darmstadt; Gerhard Neumann, </b><br><br><i><span class="larger-font">Semi-supervised Learning with Ladder Network</span></i><br><b>
+Antti Rasmus*, Aalto University; Mathias Berglund, Aalto University; Mikko Honkala, Nokia Labs; Harri Valpola, ZenRobotics; Tapani Raiko, Aalto University</b><br><br><i><span class="larger-font">Embedding Inference for Structured Multilabel Prediction</span></i><br><b>
+Farzaneh Mirzazadeh, University of Alberta; Siamak Ravanbakhsh, University of Alberta; Bing Xu, University of Alberta; Nan Ding, Google; Dale Schuurmans*, Alberta</b><br><br><i><span class="larger-font">Variational inference with copula augmentation</span></i><br><b>
+Dustin Tran*, Harvard University; David Blei, Columbia University; Edoardo Airoldi, Harvard University</b><br><br><i><span class="larger-font">Recursive 2D-3D Convolutional Networks for Neuronal Boundary Prediction</span></i><br><b>
+Kisuk Lee*, MIT; Aleksandar Zlateski, MIT; Vishwanathan Ashwin, Princeton University; H. Sebastian Seung, Princeton University</b><br><br><i><span class="larger-font">A Dual-Augmented Block Minimization Framework for Learning with Limited Memory</span></i><br><b>
+Ian En-Hsu Yen*, University of Texas at Austin; Shan-Wei Lin, National Taiwan University; Shou-De Lin, National Taiwan University</b><br><br><i><span class="larger-font">Optimal Testing for Families of Distributions</span></i><br><b>
+Jayadev Acharya, Massachusetts Institute of Technology; Constantinos Daskalakis*, MIT; Gautam Kamath, MIT</b><br><br><i><span class="larger-font">Efficient Continuous-Time Hidden Markov Model for Disease Modeling</span></i><br><b>
+Yu-Ying Liu*, Georgia Tech; Le Song, Georgia Institute of Technology; Fuxin Li, Georgia Tech; Shuang Li, Georgia Tech; James Rehg, Georgia Tech</b><br><br><i><span class="larger-font">Expectation Particle Belief Propagation</span></i><br><b>
+Thibaut Lienart*, University of Oxford; Yee Whye Teh, University of Oxford; Arnaud Doucet, Oxford</b><br><br><i><span class="larger-font">Latent Bayesian melding for integrating individual and population models</span></i><br><b>
+Mingjun Zhong*, University of Edinburgh; Nigel Goddard, ; Charles Sutton, University of Edinburgh</b><br><br></div><p>
+</p></div>
+        </div>
+        </div>  <!--div class="col-xs-12 col-sm-9"-->
+
+    
+
+
+      </main>
+        <!--END BLOCK CONTENT-->
+
+
+      </div><!--/row-->
+      
+      
+
+
+      
+
+    </div><!--/Page.container-->
+
+
+    <!--Footer for the edit button-->
+    
+<script src="/static/admin/bootstrap-wizard/src/bootstrap-wizard.js" type="text/javascript"></script>
+<script>
+	/*
+		Set up the feedback button with the correct URL for this page. 
+	*/
+	
+	/*Get the URL for this page and parse out just the path part*/
+	
+	
+	feedbackPath = "/Help/Feedback?path=" + encodeURIComponent(location.protocol + "//" + location.hostname + ":" + location.port + location.pathname + location.search);
+
+	
+	/*Poke that as the hrefinto the button*/
+
+	$("#feedback").attr("href", feedbackPath);
+	
+    $(function(){
+        if ( $(".editable").length == 0){
+            $("#editFooter").hide();
+        }
+    })
+</script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--Replace aloha's jquery 1.7 with jquery 2-->
+    <script>var $ = jq2;</script>
+    <script src="/static/admin/js/fastclick.min.js" type="text/javascript"></script>
+
+	
+    <script>
+		$(document).ready(function() {
+		  $('[data-toggle=offcanvas]').click(function() {
+		    $('.row-offcanvas').toggleClass('active');
+		  });
+		});
+	</script>
+	
+	
+    <script src="/static/admin/glyphicons_pro/glyphicons/web/html_css/scripts/modernizr.js" type="text/javascript" charset="utf-8"></script>
+
+    
+    
+    
+    <!-- load the jQuery and require.js libraries -->
+
+<script src="/static/admin/alohaeditor/src/lib/require.js" type="text/javascript"></script>
+
+<!-- load the Aloha Editor core and some plugins -->
+<script>
+ var Aloha = window.Aloha || ( window.Aloha = {} );
+
+ Aloha.settings = {
+     plugins: {
+         format: { config : [ "table","strong", "em" ,"u","del", "s", "p", "h1", "h2", "h3", "h4", "h5", "h6", "pre", "removeFormat"] }
+     },
+     sidebar: { disabled: true }
+ };
+ </script>
+
+<script src="/static/admin/alohaeditor/src/lib/aloha.js" type="text/javascript"
+data-aloha-plugins="common/ui,
+                     common/format,
+                     common/list,
+                     common/table,
+                     common/link"
+></script>
+
+<!-- load the Aloha Editor CSS styles -->
+<link rel="stylesheet" href="/static/admin/alohaeditor/src/css/aloha.css" type="text/css" media="screen">
+
+
+<!-- make all elements with class="editable" editable with Aloha Editor -->
+<script type="text/javascript">
+       Aloha.ready( function() {
+              var $ = Aloha.jQuery;
+              //Save a pointer to Aloha's jquery becuase it has 
+              //lots of the jquery ui in it that we might need later.
+              window.jqAloha = Aloha.jQuery;
+              //$('.editable').aloha();
+       });
+</script>
+
+<script>
+$("#nopageedit").hide();
+function start_edit(){
+    var $ = Aloha.jQuery;
+    
+    //At the beginning of an edit, we need to replace the content of the 
+    //editable div with it's databased content in order to preserve the 
+    //template tags.
+
+    $(".editable").each(function(index){
+        var myself = this;
+        var docvID = this.getAttribute('documentversion');
+        var blurbtext = this.getAttribute("blurbtext");
+        var request = $.ajax({
+    				url: "/Admin/RetrieveDocumentVersion",
+    				type: "POST",
+    				data: {
+    					docvID : docvID,
+                        csrfmiddlewaretoken: csrftoken,
+                        blurbtext : blurbtext
+    				},
+    				dataType: "html"
+    			})
+        request.done(function(msg){
+            //msg is returned with quotes around it. Strip those off.
+            myself.innerHTML = msg.slice(1,-1);
+            
+        })
+    })
+    /* You must remove any countdown.js timers on the page before replacing the page with it's document version otherwise,
+    	Javascript will throw an exception.  */
+       
+    jq2("[class$='-countdown']").parent().remove()
+    $('.editable').aloha();
+    window.status.bold();
+    window.status = "Click outside the editable area to save. Changes are LIVE!! Refresh page to discard changes.";
+    $("#editpage").hide();
+    $("#noeditpage").show();
+    
+}
+function stop_edit(){
+    Aloha.jQuery('.editable').mahalo();
+    window.status = "Editing Disabled";
+    $("#noeditpage").hide();
+    $("#editpage").show();
+    location.reload();
+    
+}
+</script>
+<script>
+    Aloha.ready(function() {
+    	Aloha.require( ['aloha', 'aloha/jquery'], function( Aloha, jQuery) {
+		
+    		// save all changes after leaving an editable
+    		Aloha.bind('aloha-editable-deactivated', function(){
+    			var content = Aloha.activeEditable.getContents();
+    			var contentId = Aloha.activeEditable.obj[0].id;
+    			var pageId = window.location.pathname;
+                var originalContent = Aloha.activeEditable.originalContent;
+                var documentversion = Aloha.activeEditable.originalObj[0].getAttribute('documentversion');
+                var blurbtext = Aloha.activeEditable.originalObj[0].getAttribute('blurbtext');
+    			// textarea handling -- html id is "xy" and will be "xy-aloha" for the aloha editable
+    			if ( contentId.match(/-aloha$/gi) ) {
+    				contentId = contentId.replace( /-aloha/gi, '' );
+    			}
+    			var request = jQuery.ajax({
+    				url: "/Admin/SaveDocument",
+    				type: "POST",
+    				data: {
+    					content : content,
+                        originalContent: originalContent,
+    					contentId : contentId,
+    					pageId : pageId,
+                        documentversion:documentversion,
+                        blurbtext : blurbtext,
+                        csrfmiddlewaretoken: csrftoken
+    				},
+                    success: function(data){
+                        if (data['message']){
+                            alert(data['message']);
+                        }
+                        
+                    },
+                    error: function(xqXHR, textStatus){
+                        window.status = textStatus;
+                        debugger;            
+                    }
+                    
+    			});
+ 
+    		});
+		
+    	});
+    });
+</script>
+<script type="text/javascript">
+       Aloha.ready( function() {
+              var JQuery = Aloha.jQuery;
+       });
+       
+       jQuery(document).ajaxSend(function(event, xhr, settings) {
+           function getCookie(name) {
+               var cookieValue = null;
+               if (document.cookie && document.cookie != '') {
+                   var cookies = document.cookie.split(';');
+                   for (var i = 0; i < cookies.length; i++) {
+                       var cookie = jQuery.trim(cookies[i]);
+                       // Does this cookie string begin with the name we want?
+                       if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                           cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                           break;
+                       }
+                   }
+               }
+               return cookieValue;
+           }
+           function sameOrigin(url) {
+               // url could be relative or scheme relative or absolute
+               var host = document.location.host; // host + port
+               var protocol = document.location.protocol;
+               var sr_origin = '//' + host;
+               var origin = protocol + sr_origin;
+               // Allow absolute or scheme relative URLs to same origin
+               return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
+                   (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
+                   // or any other URL that isn't scheme relative or absolute i.e relative.
+                   !(/^(\/\/|http:|https:).*/.test(url));
+           }
+           function safeMethod(method) {
+               return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+           }
+
+           if (!safeMethod(settings.type) && sameOrigin(settings.url)) {
+               xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+           }
+       });
+</script>
+
+    
+    <script>
+    window.addEventListener('load', function() {
+		/*Minified*/
+		var attachFastClick = Origami.fastclick;
+		attachFastClick(document.body);
+		/*Not minified*/
+        /*FastClick.attach(document.body);*/
+    }, false);
+    
+    
+    
+    </script>
+    
+    <!--Prevent links from opening externally-->
+    
+    
+    
+    
+     <div class='hidden'>Successful Page Load</div>
+	 <div class='hidden'>Do not remove: This comment is monitored to verify that the site is working properly</div>
+	 
+  </body>
+</html>
