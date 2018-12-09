@@ -8,12 +8,8 @@ def index(request):
     return render(request, 'summary_index/index.html')
 
 
-# def short_summary(request):
-#     return render(request, 'summary_index/short_summary.html')
-#
-#
-# def long_summary(request):
-#     return render(request, 'summary_index/long_summary.html')
+def summary(request):
+    return render(request, 'summary_index/summary.html')
 
 
 def user_info(request):

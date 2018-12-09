@@ -37,9 +37,9 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li class="active"><a href="index.html">Introduction</a></li>
-							<li><a href="generic.html">Short Text Summary</a></li>
-							<li><a href="elements.html">Long Text File Summary</a></li>
+							<li class="active"><a href="{% url 'index' %}">Introduction</a></li>
+							<li><a href="{% url 'summary' %}">Text Summary</a></li>
+							<li><a href="elements.html">About Us</a></li>
 						</ul>
 						<ul class="icons">
 							<li><a href="https://twitter.com/tty8128" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
@@ -73,56 +73,92 @@
 							<section class="posts">
 								<article>
 									<header>
-										<span class="date">User story</span>
-										<h2><a href="#">Investor</a></h2>
+										<span class="date">April 24, 2017</span>
+										<h2><a href="#">Sed magna<br />
+										ipsum faucibus</a></h2>
 									</header>
-									<a href="#" class="image fit"><img src="{% static 'images/investor.jpeg' %}" alt="" /></a>
-									<p>Long text, terminologies, strange logics, etc. What is this report saying? Don’t throw it away, come here at Auto paper summary and claim the readable text. Your time is valuable.</p>
+									<a href="#" class="image fit"><img src="{% static 'images/pic02.jpg' %}" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
 									<ul class="actions special">
 										<li><a href="#" class="button">Full Story</a></li>
 									</ul>
 								</article>
 								<article>
 									<header>
-										<span class="date">User story</span>
-										<h2><a href="#">Student</a></h2>
+										<span class="date">April 22, 2017</span>
+										<h2><a href="#">Primis eget<br />
+										imperdiet lorem</a></h2>
 									</header>
-									<a href="#" class="image fit"><img src="{% static 'images/student.jpeg' %}" alt="" /></a>
-									<p>Lots of papers to read and new fields to dive in. You really don’t have to be troubled. We exactly know how you feel as a student either. Come to us and we won’t disappear you.</p>
+									<a href="#" class="image fit"><img src="{% static 'images/pic03.jpg' %}" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
 									<ul class="actions special">
 										<li><a href="#" class="button">Full Story</a></li>
 									</ul>
 								</article>
 								<article>
 									<header>
-										<span class="date">User story</span>
-										<h2><a href="#">Journalist</a></h2>
+										<span class="date">April 18, 2017</span>
+										<h2><a href="#">Ante mattis<br />
+										interdum dolor</a></h2>
 									</header>
-									<a href="#" class="image fit"><img src="{% static 'images/journalist.jpeg' %}" alt="" /></a>
-									<p>Could a person has knowledge in all fields? Definitely No. Need background investigation every time? Definitely Yes. So why don't you come to us? Key points in background investigation in a flash!</p>
+									<a href="#" class="image fit"><img src="{% static 'images/pic04.jpg' %}" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
 									<ul class="actions special">
 										<li><a href="#" class="button">Full Story</a></li>
 									</ul>
 								</article>
 								<article>
 									<header>
-										<span class="date">User story</span>
-										<h2><a href="#">Beginner</a></h2>
+										<span class="date">April 14, 2017</span>
+										<h2><a href="#">Tempus sed<br />
+										nulla imperdiet</a></h2>
 									</header>
-									<a href="#" class="image fit"><img src="{% static 'images/beginner.jpeg' %}" alt="" /></a>
-									<p>Your patience is wearing thin due to the tutorial which is long and seems nonsense. Why don't you let us help? Make it much simpler and enjoy your joyful begin at here.</p>
+									<a href="#" class="image fit"><img src="{% static 'images/pic05.jpg' %}" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 11, 2017</span>
+										<h2><a href="#">Odio magna<br />
+										sed consectetur</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="{% static 'images/pic06.jpg' %}" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 7, 2017</span>
+										<h2><a href="#">Augue lorem<br />
+										primis vestibulum</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="{% static 'images/pic07.jpg' %}" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
 									<ul class="actions special">
 										<li><a href="#" class="button">Full Story</a></li>
 									</ul>
 								</article>
 							</section>
 
-						<!-- Footer -->
-							<footer>
-								<div class="pagination">
-                                    <p>...More user stories to be uploaded...</p>
-								</div>
-							</footer>
+{#						<!-- Footer -->#}
+{#							<footer>#}
+{#								<div class="pagination">#}
+{#									<!--<a href="#" class="previous">Prev</a>-->#}
+{#									<a href="#" class="page active">1</a>#}
+{#									<a href="#" class="page">2</a>#}
+{#									<a href="#" class="page">3</a>#}
+{#									<span class="extra">&hellip;</span>#}
+{#									<a href="#" class="page">8</a>#}
+{#									<a href="#" class="page">9</a>#}
+{#									<a href="#" class="page">10</a>#}
+{#									<a href="#" class="next">Next</a>#}
+{#								</div>#}
+{#							</footer>#}
 
 					</div>
 
@@ -152,18 +188,16 @@
 						<section class="split contact">
 							<section class="alt">
 								<h3>Address</h3>
-								<p>8 St Marys St #02215<br />
-								Boston, MA</p>
+								<p>1234 Somewhere Road #87257<br />
+								Nashville, TN 00000-0000</p>
 							</section>
 							<section>
 								<h3>Phone</h3>
-								<p><a href="#">(857) 277-4183</a></p>
+								<p><a href="#">(000) 000-0000</a></p>
 							</section>
 							<section>
 								<h3>Email</h3>
-								<p><a href="#">cuicyz@bu.edu<br />
-                                ajlin@bu.edu<br />
-                                tty8128@bu.edu</a></p>
+								<p><a href="#">info@untitled.tld</a></p>
 							</section>
 							<section>
 								<h3>Social</h3>
