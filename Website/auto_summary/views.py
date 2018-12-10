@@ -3,6 +3,7 @@ from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 import json
 from .models import *
 from .forms import *
+from .text_summary import *
 
 
 def index(request):
@@ -10,29 +11,27 @@ def index(request):
 
 
 def summary(request):
-    return render(request, 'summary_index/summary.html')
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = ShortTextForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            input_data = form.cleaned_data['short_input']
+            output_summary = short_text_summary(input_data)
+            if hasattr(output_summary, 'errormessage'):
+                return render(request, 'summary_index/summary.html', {'form': form, 'error': str(output_summary.errormessage)})
+            else:
+                return render(request, 'summary_index/summary.html', {'form': form, 'summary': str(output_summary.result)})
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = ShortTextForm()
+    return render(request, 'summary_index/summary.html', {'form': form})
 
 
 def about(request):
     return render(request, 'summary_index/about.html')
-
-
-def short_input(request):
-    # if this is a POST request we need to process the form data
-    if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = NameForm(request.POST)
-        # check whether it's valid:
-        if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            return HttpResponseRedirect('/summary_index/summary')
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        form = NameForm()
-
-    return render(request, 'name.html', {'form': form})
 
 
 def user_info(request):
@@ -41,12 +40,6 @@ def user_info(request):
     user_obj = UserInfo.objects.filter(ip=ip_addr)
     if not user_obj:
         UserInfo.objects.create(ip=ip_addr)
-    #     res = UserInfo.objects.create(ip=ip_addr)
-    #     ip_add_id = res.id
-    # else:
-    #     ip_add_id = user_obj[0].id
-    #
-    # ShortTextDB.objects.create(short_text="",user_ip = ip_add_id)
 
     result = {
         "status": "success",

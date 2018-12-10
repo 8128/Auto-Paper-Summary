@@ -42,29 +42,34 @@
 					<div id="main">
 
                         <!-- Form -->
-                            <form method="post" action="{% url 'short_input' %}">
+                            <form method="post" action="{% url 'summary' %}">
                                 {% csrf_token %}
                                 <div class="row gtr-uniform">
                                     <div class="col-12">
                                         <ul class="actions">
-                                            <li><a href="#" class="primary button">Check Usage</a></li>
-                                            <li><a href="#" class="button">Examples</a></li>
+                                            <li><a href="#usage" class="primary button">Check Usage</a></li>
+                                            <li><a href="#short text example 1" class="button">Examples</a></li>
+                                            <!--
                                             <li><a href="#" class="button">Your History</a></li>
+                                            -->
                                         </ul>
                                     </div>
+                                    <!-- Break -->
                                     <div class="col-12">
-                                        <label for="your_name">Your name: </label>
-                                        <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
-                                        <input type="submit" value="OK">
-                                    </div>
-                                    <div class="col-12">
-                                        <textarea name="demo-message" id="input_message" placeholder="Enter your message" rows="6"></textarea>
+                                        {{ form }}
+                                        {% if summary %}
+                                            <h3>Result:</h3>
+                                            <p>{{ summary }}</p>
+                                        {% endif %}
+                                        {% if error %}
+                                            <h3>Error:</h3>
+                                            <p>{{ error }}</p>
+                                        {% endif %}
                                     </div>
                                     <!-- Break -->
                                     <div class="col-12">
                                         <ul class="actions">
                                             <li><input type="submit" value="Summarize" class="primary" /></li>
-                                            <li><input type="reset" value="Reset" /></li>
                                             <li><a href="#" class="button">Long Text Summary</a></li>
                                         </ul>
                                     </div>
@@ -74,15 +79,66 @@
                         <!-- Post -->
                             <section class="post">
                                 <header class="major">
-                                    <span class="date">Usage</span>
+                                    <span class="date" id="usage">Usage</span>
                                 </header>
                                 <p>
                                     For short text summary of which length is shorter than three thousand, you can input your text in the textbox. For long text summary, uploading a txt file is recommended.
                                 </p>
                                 <p>
-                                    Different methods and ratios are used to generate the summary. The results will be different.
+                                    Different methods and ratios are used to generate the summary. The results will be different in these two situations.
                                 </p>
+                                <!-- break -->
+                                <header class="major">
+                                    <span class="date" id="short text example 1">Short Text Example 1</span>
+                                </header>
+                                <p>
+                                    Thomas A. Anderson is a man living two lives. By day he is an average computer programmer and by night a hacker known as Neo. Neo has always questioned his reality, but the truth is far beyond his imagination. Neo finds himself targeted by the police when he is contacted by Morpheus, a legendary computer hacker branded a terrorist by the government. Morpheus awakens Neo to the real world, a ravaged wasteland where most of humanity have been captured by a race of machines that live off of the humans' body heat and electrochemical energy and who imprison their minds within an artificial reality known as the Matrix. As a rebel against the machines, Neo must return to the Matrix and confront the agents: super-powerful computer programs devoted to snuffing out Neo and the entire human rebellion.
+                                </p>
+                                <form method="post" action="{% url 'summary' %}">
+                                    {% csrf_token %}
+                                    <ul class="actions">
+							            <li><a type="submit" class="button icon solo fa-arrow-up scrolly">Summarize</a></li>
+						            </ul>
+                                </form>
+                                <!-- break -->
+                                <header class="major">
+                                    <span class="date" id="short text example 2">Short Text Example 2</span>
+                                </header>
+                                <p>
+                                    Artificial neural networks (ANN) or connectionist systems are computing systems vaguely inspired by the biological neural networks that constitute animal brains.[1] The neural network itself is not an algorithm, but rather a framework for many different machine learning algorithms to work together and process complex data inputs.[2] Such systems "learn" to perform tasks by considering examples, generally without being programmed with any task-specific rules. For example, in image recognition, they might learn to identify images that contain cats by analyzing example images that have been manually labeled as "cat" or "no cat" and using the results to identify cats in other images. They do this without any prior knowledge about cats, for example, that they have fur, tails, whiskers and cat-like faces. Instead, they automatically generate identifying characteristics from the learning material that they process.<br/>
+                                    An ANN is based on a collection of connected units or nodes called artificial neurons, which loosely model the neurons in a biological brain. Each connection, like the synapses in a biological brain, can transmit a signal from one artificial neuron to another. An artificial neuron that receives a signal can process it and then signal additional artificial neurons connected to it.<br/>
+                                    In common ANN implementations, the signal at a connection between artificial neurons is a real number, and the output of each artificial neuron is computed by some non-linear function of the sum of its inputs. The connections between artificial neurons are called 'edges'. Artificial neurons and edges typically have a weight that adjusts as learning proceeds. The weight increases or decreases the strength of the signal at a connection. Artificial neurons may have a threshold such that the signal is only sent if the aggregate signal crosses that threshold. Typically, artificial neurons are aggregated into layers. Different layers may perform different kinds of transformations on their inputs. Signals travel from the first layer (the input layer), to the last layer (the output layer), possibly after traversing the layers multiple times.<br/>
+                                </p>
+                                <form method="post" action="{% url 'summary' %}">
+                                    {% csrf_token %}
+                                    <ul class="actions">
+							            <li><a type="submit" class="button icon solo fa-arrow-up scrolly">Summarize</a></li>
+						            </ul>
+                                </form>
+                                <!-- break -->
+                                <header class="major">
+                                    <span class="date" id="long txt example 1">Long Txt Example 1</span>
+                                </header>
+                                <h3><a href="http://rare-technologies.com/the_matrix_synopsis.txt">[TXT]the matrix synopsis</a></h3>
+                                <form method="post" action="{% url 'summary' %}">
+                                    {% csrf_token %}
+                                    <ul class="actions">
+							            <li><a type="submit" class="button icon solo fa-arrow-up scrolly">Summarize</a></li>
+						            </ul>
+                                </form>
+                                <!-- break -->
+                                <header class="major">
+                                    <span class="date" id="long txt example 2">Long Txt Example 2</span>
+                                </header>
+                                <h3><a href="http://rare-technologies.com/the_big_lebowski_synopsis.txt">[TXT]the big lebowski synopsis</a></h3>
+                                <form method="post" action="{% url 'summary' %}">
+                                    {% csrf_token %}
+                                    <ul class="actions">
+							            <li><a type="submit" class="button icon solo fa-arrow-up scrolly">Summarize</a></li>
+						            </ul>
+                                </form>
                             </section>
+
 
 					</div>
 
