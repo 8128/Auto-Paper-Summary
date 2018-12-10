@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 import json
 from .models import *
+from .forms import *
 
 
 def index(request):
@@ -10,6 +11,28 @@ def index(request):
 
 def summary(request):
     return render(request, 'summary_index/summary.html')
+
+
+def about(request):
+    return render(request, 'summary_index/about.html')
+
+
+def short_input(request):
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = NameForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            # ...
+            # redirect to a new URL:
+            return HttpResponseRedirect('/summary_index/summary')
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = NameForm()
+
+    return render(request, 'name.html', {'form': form})
 
 
 def user_info(request):

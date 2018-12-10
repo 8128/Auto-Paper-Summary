@@ -6,17 +6,17 @@
 -->
 <html>
 	<head>
-		<title>Summary - Auto Paper Summary</title>
-        {% load staticfiles %}
+		<title>Auto Paper Summary</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        {% load staticfiles %}
 		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
 		<noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
-			<div id="wrapper">
+			<div id="wrapper" class="fade-in">
 
 				<!-- Header -->
 					<header id="header">
@@ -27,8 +27,8 @@
 					<nav id="nav">
 						<ul class="links">
 							<li><a href="{% url 'index' %}">Introduction</a></li>
-							<li class="active"><a href="{% url 'summary' %}">Text Summary</a></li>
-							<li><a href="{% url 'about' %}">About Us</a></li>
+							<li><a href="{% url 'summary' %}">Text Summary</a></li>
+							<li  class="active"><a href="{% url 'about' %}">About Us</a></li>
 						</ul>
 						<ul class="icons">
 							<li><a href="https://twitter.com/tty8128" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
@@ -41,52 +41,25 @@
 				<!-- Main -->
 					<div id="main">
 
-                        <!-- Form -->
-                            <form method="post" action="{% url 'short_input' %}">
-                                {% csrf_token %}
-                                <div class="row gtr-uniform">
-                                    <div class="col-12">
-                                        <ul class="actions">
-                                            <li><a href="#" class="primary button">Check Usage</a></li>
-                                            <li><a href="#" class="button">Examples</a></li>
-                                            <li><a href="#" class="button">Your History</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="your_name">Your name: </label>
-                                        <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
-                                        <input type="submit" value="OK">
-                                    </div>
-                                    <div class="col-12">
-                                        <textarea name="demo-message" id="input_message" placeholder="Enter your message" rows="6"></textarea>
-                                    </div>
-                                    <!-- Break -->
-                                    <div class="col-12">
-                                        <ul class="actions">
-                                            <li><input type="submit" value="Summarize" class="primary" /></li>
-                                            <li><input type="reset" value="Reset" /></li>
-                                            <li><a href="#" class="button">Long Text Summary</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </form>
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<span class="date">About us</span>
+									<h3>Three graduate students
+									from BU ECE</h3>
+									<p>Tianyi Tang, a talented person who always have great creativity and productivity. <br />
+									Yuzhou Cui, a student who always keep his curious and thrist for new technologies.<br />
+                                    Alen Lin, a seeker for knowledge. He never give up any opportunity to explore what he likes.<br /><br />
+                                    Here at BU, we built the Auto Paper Summary.<br />
+                                    Here at this website, we meet you.</p>
+								</header>
+								<a href="https://www.bu.edu/eng/departments/ece/" class="image main"><img src="{% static 'images/ecelogo.jpg' %}" alt="" /></a>
+							</article>
 
-                        <!-- Post -->
-                            <section class="post">
-                                <header class="major">
-                                    <span class="date">Usage</span>
-                                </header>
-                                <p>
-                                    For short text summary of which length is shorter than three thousand, you can input your text in the textbox. For long text summary, uploading a txt file is recommended.
-                                </p>
-                                <p>
-                                    Different methods and ratios are used to generate the summary. The results will be different.
-                                </p>
-                            </section>
 
 					</div>
 
-                <!-- Footer -->
+				<!-- Footer -->
 					<footer id="footer">
 						<section>
 							<form method="post" action="#">
@@ -123,7 +96,7 @@
 							</section>
 							<section>
 								<h3>Email</h3>
-								<p><a href="mailto:tty8128@bu.edu">tty8128@bu.edu<br />
+								<p><a href="mailto:tty8128@bu.edu">tty8128@bu.edu<br/ >
                                 cuicyz@bu.edu<br />
                                 ajlin@bu.edu</a></p>
 							</section>
@@ -138,6 +111,7 @@
 							</section>
 						</section>
 					</footer>
+
 
 				<!-- Copyright -->
 					<div id="copyright">
