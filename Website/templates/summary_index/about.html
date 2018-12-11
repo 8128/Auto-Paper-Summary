@@ -47,11 +47,11 @@
 									<span class="date">About us</span>
 									<h3>Three graduate students
 									from BU ECE</h3>
-									<p>Tianyi Tang, a talented person who always have great creativity and productivity. <br />
-									Yuzhou Cui, a student who always keep his curious and thrist for new technologies.<br />
-                                    Alen Lin, a seeker for knowledge. He never give up any opportunity to explore what he likes.<br /><br />
-                                    Here at BU, we built the Auto Paper Summary.<br />
-                                    Here at this website, we meet you.</p>
+									<p>Tianyi Tang, a talented person who always have great productivity and creativity. </p>
+									<p>Yuzhou Cui, a student who always keep his curious and thirst for new technologies.</p>
+                                    <p>Alex Lin, a seeker for knowledge. He never give up any opportunity to learn what he likes.</p>
+                                    <p>Here at BU, the three of us built the Auto Paper Summary.</p>
+                                    <p>Here at this website, we meet you.</p>
 								</header>
 								<a href="https://www.bu.edu/eng/departments/ece/" class="image main"><img src="{% static 'images/ecelogo.jpg' %}" alt="" /></a>
 							</article>
@@ -64,18 +64,8 @@
 						<section>
 							<form method="post" action="#">
 								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
+									{% csrf_token %}
+                                    {{ emailform }}
 								</div>
 								<ul class="actions">
 									<li><input type="submit" value="Send Message" /></li>
@@ -111,7 +101,6 @@
 							</section>
 						</section>
 					</footer>
-
 
 				<!-- Copyright -->
 					<div id="copyright">

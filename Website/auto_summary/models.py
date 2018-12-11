@@ -32,3 +32,14 @@ class LongTextDB(models.Model):
         verbose_name = u'User Long Text Input'
         verbose_name_plural = verbose_name
         db_table = 'user_long_input'
+
+
+class UserFeedBack(models.Model):
+    user_name = models.CharField(default='', verbose_name=u'user name', max_length=50, null=False)
+    user_email = models.EmailField(verbose_name=u'user email', null=False)
+    user_message = models.TextField(verbose_name=u'user message', null=False)
+
+    class Meta:
+        verbose_name = u'User Feedback Info'
+        verbose_name_plural = verbose_name
+        db_table = 'user_feedback_info'
