@@ -9,6 +9,7 @@
 		<title>Summary - Auto Paper Summary</title>
         {% load staticfiles %}
 		<meta charset="utf-8" />
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
 		<noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
@@ -90,7 +91,7 @@
                                             <p>{{ error2 }}</p>
                                         {% endif %}
                                     </div>
-                                <input type="file" name="file" />
+                                <input type="file" name="file" required/>
                                     <!-- Break -->
                                     <div class="col-12">
                                         <ul class="actions">
@@ -110,7 +111,7 @@
                                     For short text summary of which length is shorter than three thousand, you can input your text in the textbox. For long text summary, uploading a txt file is recommended.
                                 </p>
                                 <p>
-                                    Different methods and ratios are used to generate the summary. The results will be different in these two situations.
+                                    Different methods and ratios are used to generate the summary. The results will be different in these two situations. If you are using short text summary, the ratio will be higher and thus the result will become comprehensive and cover more information. If you are using long text summary, then the result will be shorter so you can get rough understanding of the whole article.
                                 </p>
                             </section>
 

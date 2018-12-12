@@ -45,7 +45,6 @@ def summary(request):
                                                                       'summary1': str(output_summary_short.result),
                                                                       'emailform': form_feedback})
         elif request.FILES['file']:
-            print(request.FILES['file'])
             output_summary_long = long_text_summary(request.FILES['file'])
             if hasattr(output_summary_long, 'errormessage'):
                 return render(request, 'summary_index/summary.html', {'shortform': short_form,
