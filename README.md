@@ -1,5 +1,3 @@
-Automatic Paper Summary
-================
 ![screen shot 2018-12-12 at 9 06 38 am](https://user-images.githubusercontent.com/43394154/49874750-503c3680-fded-11e8-9984-1f951e95dba7.png)
 
 The goal of this project is to create a system which generates a short and accurate summary from longer text. We constructed a user friendly website for usage at the following link.
