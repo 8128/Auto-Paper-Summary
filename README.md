@@ -101,8 +101,8 @@ Challenges
 
 Reference
 ================
-**DUC datasets:https://duc.nist.gov/**
-**Seq2Seq:https://github.com/google/seq2seq**
-**Stanford CoreNLP:https://stanfordnlp.github.io/CoreNLP/**
-**Gensim:https://github.com/RaRe-Technologies/gensim/tree/develop/docs/notebooks**
+  * DUC datasets:https://duc.nist.gov/
+  * Seq2Seq:https://github.com/google/seq2seq
+  * Stanford CoreNLP:https://stanfordnlp.github.io/CoreNLP/
+  * Gensim:https://github.com/RaRe-Technologies/gensim/tree/develop/docs/notebooks
 
