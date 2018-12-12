@@ -23,6 +23,9 @@ This is a natural language software provide by Stanford University. It provides 
 **Sprint 3 – Gensim**
 The Gensim implementation was based on popular “TextRank” Algorithm. This module automatically summarizes the given text, by extracting one or more important sentences from the text. This was so far the best approach for our project.
 
+ * **TextRank Algorithm**
+ 
+ This is a very popular
 
 **Final - Django**
 Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. It's an open-sourced and maintained by Django Software Foundation (DSF). With python as main coding language, this is our top choice. 
