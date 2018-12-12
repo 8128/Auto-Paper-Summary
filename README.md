@@ -9,8 +9,8 @@ Short text summary is designed to generate a summary within a length of three th
 The results could differ under different methods and ratio. The ratio of the content could be higher using short text summary, thus more comprehensive. For long text summary, the ratio of content could be slighter, thus more tough to understand the whole article. 
 
 Text Summarization usually has two approaches, extractive and abstractive summarization. Our final product is designated to extractive summarization. 
- * **Extractive methods** — Involves the selection of phrases and sentences from the source document to make up the new summary.
- * **Abstractive methods** — Involves generating entirely new phrases and sentences to capture the meaning of the source document.
+ * **Extractive methods** - Involves the selection of phrases and sentences from the source document to make up the new summary.
+ * **Abstractive methods** - Involves generating entirely new phrases and sentences to capture the meaning of the source document.
 
 Usage
 ================
