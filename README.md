@@ -11,9 +11,34 @@ The results could differ under different methods and ratio. The ratio of the con
 Usage
 ================
 
-Project Sprint
+
+Technology Selection
+================
+**Sprint 1 – Seq2Seq + GloVe**
+The original research is based on Long Short Term Memory (LSTM) as core technique of  Tensorflow. This model can change words into vector forms as input and generate abstract summary as output through Seq2Seq Algorithm. GloVe is an unsupervised learning Algorithm for obtaining vector representations for words. 
+
+**Sprint 2 – CoreNLP**
+This is a natural language software provide by Stanford University. It provides numerous linguistics analysis tools but it wasn’t an ideal method for paper summarization after our testing.
+
+**Sprint 3 – Gensim**
+The Gensim implementation was based on popular “TextRank” Algorithm. This module automatically summarizes the given text, by extracting one or more important sentences from the text. This was so far the best approach for our project.
+
+**Final - Django**
+
+
+Website Building
 ================
 
+
+Project Sprints
+================
+**Sprint 1**
+
+**Sprint 2**
+
+**Sprint 3**
+
+**Final**
 
 Challenges
 ================
@@ -33,10 +58,6 @@ Challenges
 
 
 
-
-We want to build a auto-paper-summary based on LSTM.
-
-For the dataset part, we have two candidates. The first one is DUC 2003 and 2004 dataset. The second one is NIST 2015 dataset. Both of those two have great reputation. However, DUC dataset contains lots of unnecessary massages so we prefer NIST 2015 dataset for now.
 
 First, we turn word into vectors which the computer should recognize. Second, we use the method of LSTM to train our label and vectors. This give us our model. Then, we turn the paper from the user into vectors and use it as the input of our model, we should get output vectors. At last, we turn the output vectors into words and print out the summary we make. 
 
