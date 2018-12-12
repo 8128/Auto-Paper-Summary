@@ -1,5 +1,6 @@
+# Copyright 2018 Tianyi Tang tty8128@bu.edu
 from django.shortcuts import render
-from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
+from django.http import HttpResponse
 import json
 from .models import *
 from .forms import *
@@ -80,7 +81,7 @@ def eg1(request):
     short_form = ShortInputForm()
     form_feedback = ContactForm()
     return render(request, 'summary_index/summary.html', {'shortform': short_form, 'emailform': form_feedback,
-                                                          'summary1':ExampleData.objects.get(id=1).summary})
+                                                          'summary1': ExampleData.objects.get(id=1).summary})
 
 
 def eg2(request):

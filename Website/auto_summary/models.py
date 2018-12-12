@@ -1,3 +1,4 @@
+# Copyright 2018 Tianyi Tang tty8128@Bu.edu
 from django.db import models
 
 

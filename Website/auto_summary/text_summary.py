@@ -1,6 +1,5 @@
 # Copyright 2018 Tianyi Tang tty8128@Bu.edu
 from gensim.summarization import summarize
-import logging
 
 
 class long_text_summary(object):

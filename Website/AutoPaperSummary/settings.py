@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 't-4(5e+&y3!y16gmu!98dw#jq_m#j--$t++ld@uxhh*6^m0yzx'
+SECRET_KEY = 'the secret key'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -118,23 +118,4 @@ STATIC_URL = '/static/'
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    # 'formatters':{
-    #     'verbose': {
-    #         'format': '['
-    #     }
-    # },
-    # 'handlers': {
-    #     'file': {
-    #         'level': 'DEBUG',
-    #         'class': 'logging.FileHandler',
-    #         # 'filename': '/tmp/debug.log',
-    #     },
-    # },
-    # 'loggers': {
-    #     'django': {
-    #         'handlers': ['file'],
-    #         'level': 'DEBUG',
-    #         'propagate': True,
-    #     },
-    # },
 }
