@@ -43,3 +43,12 @@ class UserFeedBack(models.Model):
         verbose_name = u'User Feedback Info'
         verbose_name_plural = verbose_name
         db_table = 'user_feedback_info'
+
+
+class ExampleData(models.Model):
+    summary = models.TextField(default='', verbose_name=u'example result', null=False)
+
+    class Meta:
+        verbose_name = u'Example Result'
+        verbose_name_plural = verbose_name
+        db_table = 'example_result'

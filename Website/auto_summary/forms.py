@@ -7,7 +7,9 @@ class NameForm(forms.Form):
 
 class ShortInputForm(forms.Form):
     short_input = forms.CharField(widget=forms.Textarea(
-        attrs={'cols': '30', 'rows': '8', 'placeholder': 'If you cannot get satisfying result, maybe you are not entering meaningful sentences.', 'required': True}), min_length=400, max_length=3000)
+        attrs={'cols': '30', 'rows': '8',
+               'placeholder': 'If you cannot get satisfying result, maybe you are not entering meaningful sentences.',
+               'required': True}), min_length=400, max_length=3000)
 
 
 class ContactForm(forms.Form):

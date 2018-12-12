@@ -33,17 +33,6 @@ def summary(request):
             input_message = form_feedback.cleaned_data['user_message']
             UserFeedBack.objects.create(user_name=input_user, user_email=input_email, user_message=input_message)
             return render(request, 'summary_index/thankyou.html')
-        elif request.FILES['file']:
-            print(request.FILES['file'])
-            output_summary_long = long_text_summary(request.FILES['file'])
-            if hasattr(output_summary_long, 'errormessage'):
-                return render(request, 'summary_index/summary.html', {'shortform': short_form,
-                                                                      'error2': str(output_summary_long.errormessage),
-                                                                      'emailform': form_feedback})
-            else:
-                return render(request, 'summary_index/summary.html', {'shortform': short_form,
-                                                                      'summary2': str(output_summary_long.result),
-                                                                      'emailform': form_feedback})
         elif short_form.is_valid():
             input_data_short = short_form.cleaned_data['short_input']
             output_summary_short = short_text_summary(input_data_short)
@@ -56,8 +45,16 @@ def summary(request):
                                                                       'summary1': str(output_summary_short.result),
                                                                       'emailform': form_feedback})
         elif request.FILES['file']:
-            print(long_text_summary(request.FILES['file']).result)
-
+            print(request.FILES['file'])
+            output_summary_long = long_text_summary(request.FILES['file'])
+            if hasattr(output_summary_long, 'errormessage'):
+                return render(request, 'summary_index/summary.html', {'shortform': short_form,
+                                                                      'error2': str(output_summary_long.errormessage),
+                                                                      'emailform': form_feedback})
+            else:
+                return render(request, 'summary_index/summary.html', {'shortform': short_form,
+                                                                      'summary2': str(output_summary_long.result),
+                                                                      'emailform': form_feedback})
     # if a GET (or any other method) we'll create a blank form
     else:
         short_form = ShortInputForm()
@@ -80,8 +77,32 @@ def about(request):
     return render(request, 'summary_index/about.html', {'emailform': form})
 
 
-def test(request):
-    return render(request, 'summary_index/generic.html')
+def eg1(request):
+    short_form = ShortInputForm()
+    form_feedback = ContactForm()
+    return render(request, 'summary_index/summary.html', {'shortform': short_form, 'emailform': form_feedback,
+                                                          'summary1':ExampleData.objects.get(id=1).summary})
+
+
+def eg2(request):
+    short_form = ShortInputForm()
+    form_feedback = ContactForm()
+    return render(request, 'summary_index/summary.html', {'shortform': short_form, 'emailform': form_feedback,
+                                                          'summary1': ExampleData.objects.get(id=2).summary})
+
+
+def eg3(request):
+    short_form = ShortInputForm()
+    form_feedback = ContactForm()
+    return render(request, 'summary_index/summary.html', {'shortform': short_form, 'emailform': form_feedback,
+                                                          'summary2': ExampleData.objects.get(id=3).summary})
+
+
+def eg4(request):
+    short_form = ShortInputForm()
+    form_feedback = ContactForm()
+    return render(request, 'summary_index/summary.html', {'shortform': short_form, 'emailform': form_feedback,
+                                                          'summary2': ExampleData.objects.get(id=4).summary})
 
 
 def user_info(request):
