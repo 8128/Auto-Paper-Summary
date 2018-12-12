@@ -14,12 +14,8 @@ Text Summarization usually has two approaches, extractive and abstractive summar
 
 Usage
 ================
-.
-.
-.
-.
-.
-.
+write some steps on how to run our files.... etc
+
 
 Technology Selection
 ================
@@ -51,7 +47,13 @@ Django is a high-level Python Web framework that encourages rapid development an
 
 Website Functionality
 ================
+**Short text summarization:**
 
+User is able to copy and paste any text within 3000 words to get a summary. 
+
+**Long text summarization:**
+
+User is able to upload a .txt file to get a summary. .txt file is recommended for quality assure.
 
 Results
 ================
@@ -82,4 +84,4 @@ Challenges
 
 Reference
 ================
-
+list some of the sources you used to studied...
