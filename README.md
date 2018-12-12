@@ -8,6 +8,10 @@ Short text summary is designed to generate a summary within a length of three th
 
 The results could differ under different methods and ratio. The ratio of the content could be higher using short text summary, thus more comprehensive. For long text summary, the ratio of content could be slighter, thus more tough to understand the whole article. 
 
+Text Summarization usually has two approaches, extractive and abstractive summarization. Our final product is designated to extractive summarization. 
+ * **Extractive methods** — Involves the selection of phrases and sentences from the source document to make up the new summary.
+ * **Abstractive methods** — It involves generating entirely new phrases and sentences to capture the meaning of the source document.
+
 Usage
 ================
 
@@ -22,10 +26,14 @@ This is a natural language software provide by Stanford University. It provides 
 
 **Sprint 3 – Gensim**
 The Gensim implementation was based on popular “TextRank” Algorithm. This module automatically summarizes the given text, by extracting one or more important sentences from the text. This was so far the best approach for our project.
-
+```bash
+from gensim.summarization import summarize
+```
  * **TextRank Algorithm**
  
- This is a very popular
+TextRank Algorithm contrains two essential functions for Neuro-Linguistic Programmin(NLP): 
+ * **Keyword extraction task** - 
+ * **Sentence extractin task** - 
 
 **Final - Django**
 Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. It's an open-sourced and maintained by Django Software Foundation (DSF). With python as main coding language, this is our top choice. 
