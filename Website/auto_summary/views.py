@@ -24,7 +24,7 @@ def summary(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
-        form = ShortTextForm(request.POST)
+        short_form = ShortInputForm(request.POST)
         form_feedback = ContactForm(request.POST)
         # check whether it's valid:
         if form_feedback.is_valid():
@@ -33,18 +33,37 @@ def summary(request):
             input_message = form_feedback.cleaned_data['user_message']
             UserFeedBack.objects.create(user_name=input_user, user_email=input_email, user_message=input_message)
             return render(request, 'summary_index/thankyou.html')
-        elif form.is_valid():
-            input_data = form.cleaned_data['short_input']
-            output_summary = short_text_summary(input_data)
-            if hasattr(output_summary, 'errormessage'):
-                return render(request, 'summary_index/summary.html', {'form': form, 'error': str(output_summary.errormessage), 'emailform': form_feedback})
+        elif request.FILES['file']:
+            print(request.FILES['file'])
+            output_summary_long = long_text_summary(request.FILES['file'])
+            if hasattr(output_summary_long, 'errormessage'):
+                return render(request, 'summary_index/summary.html', {'shortform': short_form,
+                                                                      'error2': str(output_summary_long.errormessage),
+                                                                      'emailform': form_feedback})
             else:
-                return render(request, 'summary_index/summary.html', {'form': form, 'summary': str(output_summary.result), 'emailform': form_feedback})
+                return render(request, 'summary_index/summary.html', {'shortform': short_form,
+                                                                      'summary2': str(output_summary_long.result),
+                                                                      'emailform': form_feedback})
+        elif short_form.is_valid():
+            input_data_short = short_form.cleaned_data['short_input']
+            output_summary_short = short_text_summary(input_data_short)
+            if hasattr(output_summary_short, 'errormessage'):
+                return render(request, 'summary_index/summary.html', {'shortform': short_form,
+                                                                      'error1': str(output_summary_short.errormessage),
+                                                                      'emailform': form_feedback})
+            else:
+                return render(request, 'summary_index/summary.html', {'shortform': short_form,
+                                                                      'summary1': str(output_summary_short.result),
+                                                                      'emailform': form_feedback})
+        elif request.FILES['file']:
+            print(long_text_summary(request.FILES['file']).result)
+
     # if a GET (or any other method) we'll create a blank form
     else:
-        form = ShortTextForm()
+        short_form = ShortInputForm()
         form_feedback = ContactForm()
-    return render(request, 'summary_index/summary.html', {'form': form, 'emailform': form_feedback})
+
+    return render(request, 'summary_index/summary.html', {'shortform': short_form, 'emailform': form_feedback})
 
 
 def about(request):

@@ -6,20 +6,20 @@ import logging
 class long_text_summary(object):
 
     def __init__(self, file):
-        self.file = open(file, 'r')
+        self.file = file
         self.result = ''
-        self.text = self.file.read()
+        self.text = self.file.read().decode('utf-8')
         if len(self.text) < 3000:
-            print('Your input is too short for long text summary.')
-            exit(1)
+            self.errormessage = 'Your input is too short for long text summary.'
+        else:
+            try:
+                self.long_summarize()
+            except ValueError:
+                self.errormessage = 'input must have more than one sentence'
         self.file.close()
-        try:
-            self.long_summarize()
-        except ValueError:
-            self.errormessage = 'input must have more than one sentence'
 
     def long_summarize(self):
-        self.result = summarize(self.text, ratio=0.05)
+        self.result = summarize(self.text, ratio=0.02)
 
 
 class short_text_summary(object):
@@ -27,14 +27,10 @@ class short_text_summary(object):
     def __init__(self, text):
         self.text = text
         self.result = ''
-        if len(self.text) > 3000:
-            print('Your input is too long for short text summary.')
-            exit(1)
         try:
             self.short_summarize()
         except ValueError:
             self.errormessage = 'input must have more than one sentence'
 
     def short_summarize(self):
-        self.result = summarize(self.text, ratio=0.25)
-
+        self.result = summarize(self.text, ratio=0.4)

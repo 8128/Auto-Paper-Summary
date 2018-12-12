@@ -56,21 +56,45 @@
                                     </div>
                                     <!-- Break -->
                                     <div class="col-12">
-                                        {{ form }}
-                                        {% if summary %}
-                                            <h3>Result:</h3>
-                                            <p>{{ summary }}</p>
+                                        {{ shortform }}
+                                        {% if summary1 %}
+                                            <h3>Result for short text summary:</h3>
+                                            <p>{{ summary1 }}</p>
                                         {% endif %}
-                                        {% if error %}
+                                        {% if error1 %}
                                             <h3>Error:</h3>
-                                            <p>{{ error }}</p>
+                                            <p>{{ error1 }}</p>
                                         {% endif %}
                                     </div>
                                     <!-- Break -->
                                     <div class="col-12">
                                         <ul class="actions">
                                             <li><input type="submit" value="Summarize" class="primary" /></li>
-                                            <li><a href="#" class="button">Long Text Summary</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </form>
+
+                        <!-- Form -->
+                            <form method="post" action="{% url 'summary' %}" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="row gtr-uniform">
+                                    <!-- Break -->
+                                    <div class="col-12">
+                                        {% if summary2 %}
+                                            <h3>Result for long text summary:</h3>
+                                            <p>{{ summary2 }}</p>
+                                        {% endif %}
+                                        {% if error2 %}
+                                            <h3>Error:</h3>
+                                            <p>{{ error2 }}</p>
+                                        {% endif %}
+                                    </div>
+                                <input type="file" name="file" />
+                                    <!-- Break -->
+                                    <div class="col-12">
+                                        <ul class="actions">
+                                            <li><input type="submit" value="Summarize" class="primary" /></li>
                                         </ul>
                                     </div>
                                 </div>
