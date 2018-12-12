@@ -20,13 +20,17 @@ If you want to work into our project, you can check out our django building, we 
 **Environment Setting
 
 Python 3.6
+
 Django 1.9.8
+
 Gensim 3.6.0
 
 **Django building
 
 Template(In Website/templates)
+
 View(In website/auto-summary)
+
 Model(In website/auto-summary)
 
 
