@@ -53,7 +53,7 @@ User is able to copy and paste any text within 3000 words to get a summary.
 
 **Long text summarization:**
 
-User is able to upload a .txt file to get a summary. .txt file is recommended for quality assure.
+User is able to upload a .txt file to get a summary. .txt file is recommended for quality assurance.
 
 Results
 ================
