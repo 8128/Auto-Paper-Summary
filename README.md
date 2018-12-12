@@ -45,12 +45,12 @@ Website Functionality
 
 Results
 ================
-**Example text**
+**Example text:**
 
 ![screen shot 2018-12-12 at 8 46 24 am](https://user-images.githubusercontent.com/43394154/49873733-99d75200-fdea-11e8-96bb-6b1a4182427f.png)
 
 
-**Result from website**
+**Result from website:**
 
 ![screen shot 2018-12-12 at 8 42 24 am](https://user-images.githubusercontent.com/43394154/49873824-cd19e100-fdea-11e8-9e8d-ff46a7f73ad1.png)
 
