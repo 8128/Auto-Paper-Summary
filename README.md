@@ -1,5 +1,7 @@
 Automatic Paper Summary
 ================
+![screen shot 2018-12-12 at 9 02 19 am](https://user-images.githubusercontent.com/43394154/49874588-defc8380-fdec-11e8-9302-1b3c7ec29094.png)
+
 The goal of this project is to create a system which generates a short and accurate summary from longer text. We constructed a user friendly website for usage at the following link.
 ```bash
 http://34.221.113.97:8000/
