@@ -10,11 +10,16 @@ The results could differ under different methods and ratio. The ratio of the con
 
 Text Summarization usually has two approaches, extractive and abstractive summarization. Our final product is designated to extractive summarization. 
  * **Extractive methods** — Involves the selection of phrases and sentences from the source document to make up the new summary.
- * **Abstractive methods** — It involves generating entirely new phrases and sentences to capture the meaning of the source document.
+ * **Abstractive methods** — Involves generating entirely new phrases and sentences to capture the meaning of the source document.
 
 Usage
 ================
-
+.
+.
+.
+.
+.
+.
 
 Technology Selection
 ================
@@ -53,16 +58,6 @@ Results
 **Result from website:**
 
 ![screen shot 2018-12-12 at 8 42 24 am](https://user-images.githubusercontent.com/43394154/49873824-cd19e100-fdea-11e8-9e8d-ff46a7f73ad1.png)
-
-Project Sprints
-================
-**Sprint 1**
-
-**Sprint 2**
-
-**Sprint 3**
-
-**Final**
 
 Challenges
 ================
