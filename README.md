@@ -31,7 +31,7 @@ from gensim.summarization import summarize
 ```
  **TextRank Algorithm**
 
-TextRank Algorithm contrains two essential functions for Neuro-Linguistic Programmin(NLP): 
+This method contrains two essential functions for Neuro-Linguistic Programmin(NLP): 
  * **Keyword extraction task** - The task of keyword extraction algorithm is to automatically identify in a text a set of terms that best describe the document. The simplest possible approach is to use a frequency criterion. HOWEVER, this leads to poor results. The TextRank keyword extraction algorithm is fully unsupervised. No training is necessary.
  
  * **Sentence extractin task** - TextRank is very well suited for applications involving entire sentences, since it allows for a ranking over text units that is recursively computed based on information drawn from the entire text.To apply TextRank, we first build a graph associated with the text, where the graph vertices are representative for the units to be ranked. The goal is to rank entire sentences, therefore, a vertex is added to the graph for each sentence in the text.
