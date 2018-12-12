@@ -23,10 +23,11 @@ This is a natural language software provide by Stanford University. It provides 
 **Sprint 3 – Gensim**
 The Gensim implementation was based on popular “TextRank” Algorithm. This module automatically summarizes the given text, by extracting one or more important sentences from the text. This was so far the best approach for our project.
 
+
 **Final - Django**
+Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. It's an open-sourced and maintained by Django Software Foundation (DSF). With python as main coding language, this is our top choice. 
 
-
-Website Building
+Website 
 ================
 
 
@@ -56,9 +57,6 @@ Challenges
 
   * Since we were using seq2seq method to create abstract summary but some terms in datasets are very rare. The model is hard to relate or recognize the words to form an accurate summary. 
 
+Reference
+================
 
-
-
-First, we turn word into vectors which the computer should recognize. Second, we use the method of LSTM to train our label and vectors. This give us our model. Then, we turn the paper from the user into vectors and use it as the input of our model, we should get output vectors. At last, we turn the output vectors into words and print out the summary we make. 
-
-For the website building part, we want to use Django based on Python. User can input a paper on our website and we are able to give them a summarization directly. For now, we prefer the default database sqlite3. If it fails to fulfill our needs, we would try MySQL.
