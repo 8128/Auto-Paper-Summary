@@ -24,12 +24,15 @@ Usage
 Technology Selection
 ================
 **Sprint 1 – Seq2Seq + GloVe**
+
 The original research is based on Long Short Term Memory (LSTM) as core technique of  Tensorflow. This model can change words into vector forms as input and generate abstract summary as output through Seq2Seq Algorithm. GloVe is an unsupervised learning Algorithm for obtaining vector representations for words. 
 
 **Sprint 2 – CoreNLP**
+
 This is a natural language software provide by Stanford University. It provides numerous linguistics analysis tools but it wasn’t an ideal method for paper summarization after our testing.
 
 **Sprint 3 – Gensim**
+
 The Gensim implementation was based on popular “TextRank” Algorithm. This module automatically summarizes the given text, by extracting one or more important sentences from the text. This was so far the best approach for our project.
 ```bash
 from gensim.summarization import summarize
@@ -41,6 +44,7 @@ from gensim.summarization import summarize
  * **Sentence extractin task** - TextRank is very well suited for applications involving entire sentences, since it allows for a ranking over text units that is recursively computed based on information drawn from the entire text.To apply TextRank, we first build a graph associated with the text, where the graph vertices are representative for the units to be ranked. The goal is to rank entire sentences, therefore, a vertex is added to the graph for each sentence in the text.
 
 **Sprint 4(Final) – Django**
+
 Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. It's an open-sourced and maintained by Django Software Foundation (DSF). With python as main coding language, this is our top choice. 
 
 Website Functionality
