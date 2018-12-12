@@ -16,6 +16,7 @@ Usage
 ================
 For your convenience, If you just want to use our product, you can check out our website at http://autosummaryddns.net:8000.
 If you want to work into our project, you can check out our django building, we put everything you shall need there.
+
 **Environment Setting
 Python 3.6
 Django 1.9.8
