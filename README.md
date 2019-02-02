@@ -2,7 +2,7 @@
 
 The goal of this project is to create a system which generates a short and accurate summary from longer text. We constructed a user friendly website for usage at the following link.
 ```bash
-http://www.tty8128.com
+http://summary.tty8128.com
 ```
 Short text summary is designed to generate a summary within a length of three thousands words. For anything longer than three thousand words, user can upload a .txt file. Short text and Long text examples are provided for trials. 
 
